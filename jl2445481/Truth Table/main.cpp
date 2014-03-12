@@ -18,6 +18,8 @@ using namespace std;
 int main(int argc, char** argv) {
     //Declare Variables
     bool x,y;
+    //Output Heading
+    //Output First row
     x=true;
     y=true;
 
