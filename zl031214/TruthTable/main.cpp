@@ -17,6 +17,7 @@ int main(int argc, char** argv) {
     //Declare Variables
     bool x,y;
     //Output Heading 
+    cout<<"X"<<endl;
     //Output First Row
     x=true;
     y=true;
