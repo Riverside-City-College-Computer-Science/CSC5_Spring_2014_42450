@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 //Global Constants
@@ -25,49 +26,63 @@ int main(int argc, char** argv) {
 //Input Hours Worked and Dependents
     cout<<"\n";
     cout<<"Enter your hourly pay rate: $";
-    cout<<pyRate;
+    cin>>pyRate;
     cout<<"\n";
     cout<<"Enter the number of hours worked this week: ";
-    cout<<hrsWrkd;
+    cin>>hrsWrkd;
     cout<<"\n";
     cout<<"Enter total number of dependants: ";
-    cout<<depnts;
+    cin>>depnts;
     cout<<"\n";
 
    //Calculations for Gross Pay, Each Withholding Amount, Net Take Home Pay.
-    grssPay = pyRate * hrsWrkd;
+    if (hrsWrkd > 40)
+        grssPay = (pyRate * 40) + (1.5 * pyRate * (hrsWrkd - 40));
+    else
+        grssPay = pyRate * hrsWrkd;
+    
     ssnWht = grssPay * ssnTx;
     fedWht = grssPay * fedTx;
     statWht = grssPay * statTx;
     
-    if (depnts >= 4)
-   
+    if (depnts >=4)
         ntPay = grssPay - (ssnWht + fedWht + statWht + uniDues + depWht);
-
-    else     
+        
+    
+    else
         ntPay = grssPay - (ssnWht + fedWht + statWht + uniDues);
-    int depWht=0;
+        
+    
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
+    
+    cout<<setw(10)<<left<<"Your gross weekly pay is : ";
+    cout<<setw(3)<<right<<"$"<<grssPay;
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your Social Security tax withholdings for this month are: ";
+    cout<<setw(3)<<right<<"$"<<ssnWht;
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your federal income tax withholdings for this week are: ";
+    cout<<setw(3)<<right<<"$"<<fedWht;
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your state income tax withholdings for this week are: ";
+    cout<<setw(3)<<right<<"$"<<statWht;
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your union dues withholdings for this week are: ";
+    cout<<setw(3)<<right<<"$"<<uniDues;
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your dependent withholdings for this week are: ";
+    
+    if (depnts >=4)
+       cout<<setw(3)<<right<<"$"<<depWht;
+    else cout<<setw(3)<<right<<"$"<<0.00;
+    cout<<"\n";    
+    cout<<"\n";
+    cout<<setw(10)<<left<<"Your net pay for this week is: ";
+    cout<<setw(3)<<right<<"$"<<ntPay;
 
-//Output Gross Pay, Each Withholding Amount, Net Take Home Pay
-cout<<"Your gross weekly pay is : $";
-cout<<grssPay;
 cout<<"\n";
-cout<<"Your Social Security tax withholdings for this month are: $";
-cout<<ssnWht;
-cout<<"\n";
-cout<<"Your federal income tax withholdings for this week are: $";
-cout<<fedWht;
-cout<<"\n";
-cout<<"Your state income tax withholdings for this week are: $";
-cout<<statWht;
-cout<<"\n";
-cout<<"Your union dues withholdings for this week are: $";
-cout<<uniDues;
-cout<<"Your dependent withholdings for this week are: $";
-cout<<depWht;
-cout<<"\n";
-cout<<"Your net pay for this week is: $";
-cout<<ntPay;
 cout<<"\n";
 
 //Recalculate Option
@@ -77,8 +92,9 @@ cin>>ans;
 cout<<"\n";
 
 }while (ans == 'y' || ans == 'Y');
-cout<<"Don't spend it all in one place, good-bye.";
-        
+cout<<"Don't spend it all at one place, good-bye.";
+cout<<"\n";
+cout<<"\n";
 //Exit Stage Right
     return 0;
 }
