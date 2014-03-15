@@ -62,7 +62,7 @@ cout<<setw(11)<<right<<"$"<<moPymt;
 cout<<"\n";
 cout<<"\n";
 //Repeat option
-cout<<"Would you like to recalculate another loan amount?\n";
+cout<<"Would you like to calculate another loan amount and payment?\n";
 cout<<"Press y for yes, n for no, and then press return: ";
 cin>>ans;
 } while (ans == 'y' || ans == 'Y');
