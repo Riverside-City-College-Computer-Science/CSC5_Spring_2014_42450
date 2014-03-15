@@ -33,6 +33,7 @@ do
     cin>>prevYr;
     cout<<"\n";
     
+    //Calculate Annual and Monthly Salary
     nuAnul = prevYr + (prevYr * payInc); //New Annual Salary
     
     nuMonth = nuAnul/12; //New Monthly Salary
@@ -54,6 +55,7 @@ do
     cin>>month;
     cout<<"\n";
     
+   //Calculate Retro Pay 
     retPay = ((prevYr*payInc)/12)* month; //Retro Payment 
     
     cout<<"Your retroactive pay for the last ";
