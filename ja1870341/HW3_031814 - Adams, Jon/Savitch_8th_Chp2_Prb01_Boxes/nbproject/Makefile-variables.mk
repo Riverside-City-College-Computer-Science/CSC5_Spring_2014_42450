@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=savitch_8th_chp2_prb10_numbers
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/savitch_8th_chp2_prb10_numbers
+CND_ARTIFACT_NAME_Debug=savitch_8th_chp2_prb01_boxes
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/savitch_8th_chp2_prb01_boxes
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=savitch8thchp2prb10numbers.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/savitch8thchp2prb10numbers.tar
+CND_PACKAGE_NAME_Debug=savitch8thchp2prb01boxes.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/savitch8thchp2prb01boxes.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=savitch_8th_chp2_prb10_numbers
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/savitch_8th_chp2_prb10_numbers
+CND_ARTIFACT_NAME_Release=savitch_8th_chp2_prb01_boxes
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/savitch_8th_chp2_prb01_boxes
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=savitch8thchp2prb10numbers.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/savitch8thchp2prb10numbers.tar
+CND_PACKAGE_NAME_Release=savitch8thchp2prb01boxes.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/savitch8thchp2prb01boxes.tar
 #
 # include compiler specific variables
 #

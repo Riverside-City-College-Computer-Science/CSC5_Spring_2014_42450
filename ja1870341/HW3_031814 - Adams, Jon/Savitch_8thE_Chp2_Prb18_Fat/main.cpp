@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <iomanip>
 //System libraries
 using namespace std;
 
@@ -28,6 +29,7 @@ int main(int argc, char** argv) {
     cout<<"in inches and age in years"<<endl;
     cout<<"NOTE: Round all numbers to the nearest whole number"<<endl;
     cin>>weight>>height>>age;
+    cout<<fixed<<setprecision(1)<<showpoint;
     cout<<"If subject is female, it will take ";
     //Female calculations and output
     female=655+(4.3*weight)+(4.7*height)-(4.7*age);

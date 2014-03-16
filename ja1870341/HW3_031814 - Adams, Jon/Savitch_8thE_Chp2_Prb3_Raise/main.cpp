@@ -35,6 +35,8 @@ int main(int argc, char** argv) {
     cout<<setw(30)<<left<<"Your retroactive check will be:";
     cout<<setw(10)<<right<<"$"<<(newPay-orPay)/2<<endl;
     cout<<"Congratulations!!";
+    cin.get();
+    cin.get();
     //Exit Stage Right
     return 0;
 }
