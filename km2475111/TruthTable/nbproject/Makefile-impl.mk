@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=TrueTable
+PROJECTNAME=TruthTable
 
 # Active Configuration
 DEFAULTCONF=Debug
