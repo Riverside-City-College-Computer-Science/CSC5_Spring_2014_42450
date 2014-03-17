@@ -47,6 +47,7 @@ int main(int argc, char** argv)
     //Output the third row of the truth table
     y=false;
     //Exit  
+      
     return 0;
 }
 
