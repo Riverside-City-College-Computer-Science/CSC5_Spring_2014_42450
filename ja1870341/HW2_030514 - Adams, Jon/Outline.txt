@@ -1,0 +1,22 @@
+/* 
+ * File:   main.cpp
+ * Author: Adams, Jonathan 42450
+ *
+ * Created on March 3, 2014, 8:42 PM
+ */
+
+#include <iostream>
+
+//Global Constants
+//Function Prototypes
+
+using namespace std;
+
+//Execution
+int main(int argc, char** argv) {
+
+    
+    //Exit Stage Right
+    return 0;
+}
+
