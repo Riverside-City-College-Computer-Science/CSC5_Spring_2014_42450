@@ -9,12 +9,9 @@
 #include <iostream>
 using namespace std;
 
-
 //Global Constants
 
-
 //Function Prototypes
-
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -31,9 +28,9 @@ int main(int argc, char** argv) {
    cout<<(!x?'T':'F')<<"  ";
    cout<<(!y?'T':'F')<<"  ";
    cout<<(x||y?'T':'F')<<"    ";
-   cout<<(x&&y?'T':'F')<<"    ";
-   
+   cout<<(x&&y?'T':'F')<<"    ";   
    cout<<endl;
+   
    //Output second row
    y=false;
    cout<<(x?'T':'F')<<" ";
@@ -41,9 +38,9 @@ int main(int argc, char** argv) {
    cout<<(!x?'T':'F')<<"  ";
    cout<<(!y?'T':'F')<<"  ";
    cout<<(x||y?'T':'F')<<"    ";
-   cout<<(x&&y?'T':'F')<<"    ";
-   
+   cout<<(x&&y?'T':'F')<<"    ";   
    cout<<endl;
+   
    //Output third row
    y=true;
    x=false;
@@ -52,9 +49,9 @@ int main(int argc, char** argv) {
    cout<<(!x?'T':'F')<<"  ";
    cout<<(!y?'T':'F')<<"  ";
    cout<<(x||y?'T':'F')<<"    ";
-   cout<<(x&&y?'T':'F')<<"    ";
-   
+   cout<<(x&&y?'T':'F')<<"    ";   
    cout<<endl;
+   
    //Output fourth row
    y=false;
    x=false;
@@ -63,11 +60,11 @@ int main(int argc, char** argv) {
    cout<<(!x?'T':'F')<<"  ";
    cout<<(!y?'T':'F')<<"  ";
    cout<<(x||y?'T':'F')<<"    ";
-   cout<<(x&&y?'T':'F')<<"    ";
-   
+   cout<<(x&&y?'T':'F')<<"    ";   
    cout<<endl;        
    
    return 0;
     
     
 }
+
