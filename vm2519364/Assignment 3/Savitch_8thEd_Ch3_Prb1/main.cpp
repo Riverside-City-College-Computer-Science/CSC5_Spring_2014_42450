@@ -30,6 +30,7 @@ int main(int argc, char** argv) {
     cin>>playr2;
     cout<<"\n";
     //Player 1 Rock Selection
+    
     if (playr1 == 'r' || playr1 == 'R')
     {
         if(playr2 == 'r' || playr2 == 'R')
@@ -40,10 +41,11 @@ int main(int argc, char** argv) {
     
         if(playr2 == 's' || playr2 == 'S')
             cout<<"Player 1 wins! Rock breaks scissors.\n";
-    }
-        else
-            cout<<"";  
+    }else
+            cout<<"";
+    
     //Player 1 Paper Selection  
+    
     if (playr1 == 'p' || playr1 == 'P')
     {
         if(playr2 == 'r' || playr2 == 'R')
@@ -54,10 +56,11 @@ int main(int argc, char** argv) {
     
         if(playr2 == 's' || playr2 == 'S')
             cout<<"Player 2 wins! Scissors cut paper.\n";
-    }
-        else
+        }else
             cout<<"";
+    
     //Player 1 Scissor Selection
+    
     if (playr1 == 's' || playr1 == 'S')
     {
         if(playr2 == 'r' || playr2 == 'R')
@@ -68,10 +71,9 @@ int main(int argc, char** argv) {
     
         if(playr2 == 's' || playr2 == 'S')
             cout<<"Nobody wins, tie game.\n";
-    }
-        else
-            cout<<" ";
-    
+        }else
+            cout<<"";
+     
     
          cout<<"\n";
          cout<<"Would you like to play again?\n";
