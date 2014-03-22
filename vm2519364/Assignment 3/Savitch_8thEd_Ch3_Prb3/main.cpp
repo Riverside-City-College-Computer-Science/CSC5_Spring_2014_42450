@@ -27,7 +27,6 @@ int main(int argc, char** argv) {
     cout<<"Enter birth date: ";
     cin>>date;
     cout<<"\n";
-    
     if ((month==3&&date>=21)||(month==4&&date<=19)){
         cout<<"Aries: Your Horoscope Here";
     }
@@ -69,18 +68,13 @@ int main(int argc, char** argv) {
         cout<<"Invalid Entry";
      }
     cout<<"\n";
-    
     cout<<"\n";
     cout<<"Would you like to check another horoscope?\n";
     cout<<"Enter y for yes, n for no: ";
     cin>>ans;
     }while (ans=='y'||ans=='Y');
       cout<<"\n";      
-    cout<<"The End";
-    
-    
-    
-    
+    cout<<"The End"; 
     //Exit Stage Right
     return 0;
 }
