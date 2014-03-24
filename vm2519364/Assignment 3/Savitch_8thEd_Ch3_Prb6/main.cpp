@@ -18,7 +18,9 @@ using namespace std;
 int main(int argc, char** argv) {
 //Declare Variables
     int a, b, c, i;
-    float x, xT, xD;
+    float x, xT, xD, xH;
+    char ans;
+    do{
     //Input Quadratic Equation Information
     cout<<"\n";
     cout<<"Quadratic Equation: ax^2 + bx + c = 0";
@@ -32,9 +34,9 @@ int main(int argc, char** argv) {
     cout<<"c: ";
     cin>>c;
     cout<<"\n";
-    
+    xH=((b*b)-(4*a*c));
     xT=sqrt((b*b)-(4*a*c));
-    
+   
     if (xT==0){        
         x=-b/(2*a);
         cout<<"x = ";
@@ -46,7 +48,7 @@ int main(int argc, char** argv) {
         xD=(-b-(xT))/(2*a);
         cout<<"x= "<<x<<" and "<<xD;
     }
-    else if (xT<0){
+    else if (xH<0){
         xT=sqrt((-1)*((b*b)-(4*a*c)));
         //x=(-b +(xT))/(2*a);
         //xD=(-b-(xT))/(2*a);
@@ -56,9 +58,13 @@ int main(int argc, char** argv) {
         cout<<"\n";
         cout<<"x = "<<"-"<<b/(2*a)<<" - "<<xT/(2*a)<<"i";
         cout<<"\n";
-    }
-    else
-        cout<<"Invalid Entry";
+       }
+    cout<<"\n";
+    cout<<"Would you like to solve another quadratic equation?\n";
+    cout<<"Enter y for yes, n for no: ";
+    cin>>ans;
+    }while (ans=='y'||ans=='Y');
+        cout<<"Done";
     //Exit Stage Right
     return 0;
 }
