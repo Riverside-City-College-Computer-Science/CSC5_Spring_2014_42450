@@ -15,25 +15,26 @@ using namespace std;
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    int one,year,year2,year3;
-    
+    //Define Variables
+    int date,year,year2,year3;
+    //Prompt user for date
     cout<<"Please enter a 4 digit year: ";
-    cin>>one;
+    cin>>date;
     
-    if (one>=3000)
+    if (date>=3000)
     {
         cout<<"MMM";
-        year=one-3000;
+        year=date-3000;
     }
-    if ((one>=2000)&&(one<3000))
+    if ((date>=2000)&&(date<3000))
     {
         cout<<"MM";
-        year=one-2000;
+        year=date-2000;
     }
-    if ((one>=1000)&&(one<2000))
+    if ((date>=1000)&&(date<2000))
     {
         cout<<"M";
-        year=one-1000;        
+        year=date-1000;        
     }
     if ((year>=900)&&(year<1000))
     {        
@@ -1303,9 +1304,8 @@ int main(int argc, char** argv) {
             if (year3==2) cout<<"II";
             if (year3==1) cout<<"I";
         }
-    }
-       
-    
+    }      
+    //Exit Stage Right
     return 0;
 }
 
