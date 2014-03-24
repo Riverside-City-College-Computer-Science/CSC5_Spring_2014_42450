@@ -23,7 +23,7 @@ int main(int argc, char** argv) {
     while (cel!=fahr)
     {  
         fahr = (9.0/5.0) * cel + 32;
-        cel=cel-1;
+        cel=cel-1;//decrease by 1 on next loop
     }
     //Output numerical value where both Celsius and Fahrenheit are equal
     cout<<"\n";
