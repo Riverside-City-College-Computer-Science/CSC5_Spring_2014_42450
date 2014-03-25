@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Savitch_8thEd_Ch3_Prb16
+PROJECTNAME=How_To_Print_A_String
 
 # Active Configuration
 DEFAULTCONF=Debug
