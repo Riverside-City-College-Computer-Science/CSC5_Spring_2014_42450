@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
       
     if (sex=='f'||sex=='F')
     {
-        bmr=655+(4.3*wLbs)+(4.7*hInch)-(4.7*age);//calculate BMR for male
+        bmr=655+(4.3*wLbs)+(4.7*hInch)-(4.7*age);//calculate BMR for female
         //calculate BMR based on new parameters
         if (selc=='a'||selc=='A')
         {
@@ -57,7 +57,7 @@ int main(int argc, char** argv) {
     }
     else if (sex=='m'||sex=='M')
     {
-        bmr=66+(6.3*wLbs)+(12.9*hInch)-(6.8*age);//calculate BMR for female
+        bmr=66+(6.3*wLbs)+(12.9*hInch)-(6.8*age);//calculate BMR for male
         //calculate BMR based on new parameters
         if (selc=='a'||selc=='A')
         {
