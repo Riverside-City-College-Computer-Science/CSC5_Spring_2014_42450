@@ -1,43 +1,38 @@
 /* 
  * File:   main.cpp
  * Author: Cesar Obeso
- *
  * Created on March 15, 2014, 5:53 PM
  */
 
 //System Libraries
-#include <string> // class GradeBook standard string class
-#include "GradeBook.h" // include definition of class GradeBook
-
+#include <iostream>
+#include <string> // class GradeBook uses C++ standard string class
 using namespace std;
-
+ 
 // GradeBook class definition
 class GradeBook
 {
-public:
-   GradeBook( string, string ); // constructor
-   void setCourseName( string ); // set the course name
-   string getCourseName(); // get the course name
-   void displayMessage(); // displays a welcome message
-   void setCourseInstructorName( string ); // set the instructor name
-   string getCourseInstructorName(); // get the instructor name
 private:
-   string courseName; // name for this GradeBook
-   string courseInstructorName; // instructor name for this GradeBook
+   string courseName; // course name for this GradeBook
+   string courseInstructorName; // a) course instructor name for this GradeBook
+
+public:
+   GradeBook( string, string ); // constructor that initializes courseName and courseInstructorName
+   void setCourseName( string ); // function that sets the course name
+   string getCourseName(); // function that gets the course name
+   void displayMessage(); // function that displays a welcome message
+   void setCourseInstructorName( string ); // b) function that sets the course instructor name
+   string getCourseInstructorName(); // b) function that get the course instructor name
 }; // end class GradeBook
-
-#include <iostream>
-#include "GradeBook.h" // include definition of class GradeBook
-using namespace std;
-
-// initialize courseName
+// constructor initializes courseName with string supplied as argument
 GradeBook::GradeBook( string name, string insName )
 {
-   setCourseName( name ); // initialize courseName
-   setCourseInstructorName( insName ); // initialize instructor name
+   setCourseName( name ); // call set function to initialize courseName
+   setCourseInstructorName( insName ); // c)
+ 
 } // end GradeBook constructor
  
-// set the course name
+// function to set the course name
 void GradeBook::setCourseName( string name )
 {
    courseName = name; // store the course name in the object
@@ -65,24 +60,21 @@ string GradeBook::getCourseInstructorName()
 void GradeBook::displayMessage()
 {
    // call getCourseName to get the courseName
-   cout << "Welcome to the grade book for\n" << getCourseName() << "!" << endl;
+   cout << "Welcome to the grade book for\n" << getCourseName()<< "!" << endl;
    cout << "This course is presented by " << getCourseInstructorName() << "." << endl;
 } // end function displayMessage
 
-#include <iostream>
-#include "GradeBook.h" // include definition of class GradeBook
-using namespace std;
- 
 // function main begins program execution
-int main() {
-
+int main()
+{
    // create two GradeBook objects
-   GradeBook gradeBook1( "CS101 Introduction to C++ Programming" );
-   GradeBook gradeBook2( "CS102 Data Structures in C++" );
+   GradeBook gradeBook1( "CSC5 Introduction to C++ Programming","Dr. Mark Leher" );
+   GradeBook gradeBook2( "CSC5 Data Structures in C++","Dr. Mark Leher" );
  
    // display initial value of courseName for each GradeBook
-   cout << "gradeBook1 created for course: " << gradeBook1.getCourseName()<<"\n"<<endl;
-   <<"gradeBook2 created for course: " << gradeBook2.getCourseName()<< endl;
+   cout << "gradeBook1 created for course: " << gradeBook1.getCourseName()
+      << "\ngradeBook2 created for course: " << gradeBook2.getCourseName()
+      << endl;
  
    gradeBook1.displayMessage();
    gradeBook2.displayMessage();
