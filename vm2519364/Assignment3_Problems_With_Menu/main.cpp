@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Victor Medel
- * Created on March 19, 2014, 10:11 AM
- * Purpose: How to create a menu
+ * Created on March 26, 2014, 2:55 PM
+ * Purpose: Assignment 3 Problems With Menu.
  */
 
 //System Libraries
@@ -20,15 +20,15 @@ int main(int argc, char** argv) {
     //Prompt user for number of problem to execute
     cout<<"Choose from the following list"<<endl;
     cout<<"1. Savitch 8th Edition Chapter 3 Problem 1"<<endl;
-    cout<<"2. Gaddis 8th Edition Chapter 4 Problem 10"<<endl;
-    cout<<"3. Deitel 8th Edition Chapter 2 Problem 23"<<endl;
-    cout<<"4. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"5. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"6. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"7. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"8. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"9. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
-    cout<<"10. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"2. Savitch 8th Edition Chapter 3 Problem 2"<<endl;
+    cout<<"3. Savitch 8th Edition Chapter 3 Problem 3"<<endl;
+    cout<<"4. Savitch 8th Edition Chapter 3 Problem 4"<<endl;
+    cout<<"5. Savitch 8th Edition Chapter 3 Problem 5"<<endl;
+    cout<<"6. Savitch 8th Edition Chapter 3 Problem 6"<<endl;
+    cout<<"7. Savitch 8th Edition Chapter 3 Problem 14"<<endl;
+    cout<<"8. Savitch 8th Edition Chapter 3 Problem 15"<<endl;
+    cout<<"9. Savitch 8th Edition Chapter 3 Problem 16"<<endl;
+    cout<<"10. Savitch 8th Edition Chapter 3 Problem 17"<<endl;
     cin>>choose;
     //Utilize switch to implement the menu
     switch(choose){
