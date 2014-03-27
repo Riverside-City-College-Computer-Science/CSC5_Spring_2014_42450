@@ -9,16 +9,17 @@
 #include <iomanip>
 
 //global constants 
-const float DIS1=.20;
-const float DIS2=.30;
-const float DIS3=.40;
-const float DIS4=.50;
+
 //system prototypes
 
 //execution begins here!!
 using namespace std;
 int main(int argc, char** argv) {
     //declare variables  
+     float DIS1=.20;
+     float DIS2=.30;
+     float DIS3=.40;
+     float DIS4=.50;
     int quant;
     //ask for input 
     cout<<"enter the the amount of units that will be sold "<<endl;
