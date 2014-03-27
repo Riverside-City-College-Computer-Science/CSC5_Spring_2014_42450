@@ -1,6 +1,6 @@
 /* 
  * File:   main.cpp
- * Author: Victor Medel
+ * Author: Kevin R. Mindreau
  * Created on March 19, 2014, 10:11 AM
  * Purpose: How to create a menu
  */
@@ -13,7 +13,7 @@ using namespace std;
 
 //Function Prototypes
 
-//Execution Starts Here
+//Execution Starts Here!
 int main(int argc, char** argv) {
     //Declare Variables
     unsigned short choose;
@@ -76,9 +76,6 @@ int main(int argc, char** argv) {
             cout<<"Not an option!"<<endl;
         }
     }
-
-
-
     //Exit Stage Right
     return 0;
 }
