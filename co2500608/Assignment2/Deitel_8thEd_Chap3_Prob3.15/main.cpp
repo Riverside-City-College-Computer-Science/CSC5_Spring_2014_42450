@@ -1,52 +1,20 @@
 /* 
  * File:   main.cpp
  * Author: Cesar Obeso
- *
  * Created on March 16, 2014, 5:09 PM
  */
 
 #include <iostream>
 #include <cstdlib>
-#include "Date.h"
- 
-using std::cout;
-using std::endl;
-using std::cin;
- 
-int main()
-{
-  //create Date class object
-  MyDate mDate( 9, 25, 2012 );
- 
-  //display initial date
-  mDate.displayDate();
- 
-  //test program that demonstrates class Date’s capabilities
-  cout << "I can guess your birthday.\n"
-     << "Please complete following steps and enter final number.\n"
-     << "1. Multiply the DAY of month  in which you were born by 2.\n"
-     << "2. Add 5 to new number.\n"
-     << "3. Multiply new number by 50.\n"
-     << "4. Add the number that represents the month\n(1-January, 2-February etc) to new number.\n"
-     << "5. Enter the result:";
-  int result;
-  cin >> result;
-  mDate.guessBirthday(result);
- 
- 
-  // to pause
-  char a;
-  cin >> a;
- 
-  return 0;
-}
+using namespace std;
 
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
- 
 class MyDate
 {
+    private:
+  int day;
+  int month;
+  int year;
+
 public:
   MyDate(int, int, int);
   // get and set functions for month/day/year
@@ -58,22 +26,8 @@ public:
   void setYear(int);  
   void displayDate();   // display function
   void guessBirthday(int);
-private:
-  int day;
-  int month;
-  int year;
 };
- 
- 
-// Date.cpp file
- 
-#include <iostream>
- 
-using std::cout;
-using std::endl;
- 
-#include "Date.h"
- 
+
 //initialization with constructor
 MyDate::MyDate(int month, int day, int year)
 {
@@ -138,6 +92,34 @@ void MyDate::guessBirthday(int res)
   setDay(x / 100);
   setMonth(x % 100);
   cout << "Your birthday: Month: " << getMonth() << " Day: " << getDay() << endl;
+}
+
+int main()
+{
+  //create Date class object
+  MyDate mDate( 3, 25, 2014 );
+ 
+  //display initial date
+  mDate.displayDate();
+ 
+  //test program that demonstrates class Date’s capabilities
+  cout << "I can guess your birthday.\n"
+     << "Please complete following steps and enter final number.\n"
+     << "1. Multiply the DAY of month  in which you were born by 2.\n"
+     << "2. Add 5 to new number.\n"
+     << "3. Multiply new number by 50.\n"
+     << "4. Add the number that represents the month (1-January, 2-February etc) to new number.\n"
+     << "5. Enter the result:";
+  int result;
+  cin >> result;
+  mDate.guessBirthday(result);
+ 
+ 
+  // to pause
+  char a;
+  cin >> a;
+ 
+  return 0;
 }
 
 
