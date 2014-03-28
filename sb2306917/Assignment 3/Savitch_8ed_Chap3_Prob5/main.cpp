@@ -18,59 +18,87 @@ using namespace std;
 //Execution begins here
 int main(int argc, char** argv) {
     //Declare variables
-    float intrst1=.015, intrst2=.010, acctBal, totDue, minPay;
-    float tmpInt1, newBal, tmpInt2, tmpInt3;
-    //prompt for acct balance
-    cout<<"Let's calculate your minimum monthly payment"<<endl;
-    cout<<"Enter your account balance in $ "<<endl;
-    cin>>acctBal;
-    //set decimal place to 2
-    cout.setf(ios::fixed);
-    cout.setf(ios::showpoint);
-    cout.precision(2);
-    //begin if/else statement to display proper min payment
-    if (acctBal<=1000){
-        //declare temp interest variable and calc interest
-        tmpInt1=acctBal*intrst1;
-        //calc total due
-        totDue=tmpInt1+acctBal;
-        cout<<"The total amount due is "<<endl;
-        cout<<"$"<<totDue<<endl;
-        cout<<"the minimum payment due is "<<endl;
-        //use if/else to show min pay due
-        if (totDue<=10){
-            cout<<"$"<<totDue<<endl;  
-        }
-        else if(totDue>10){
-            minPay=totDue*.10;
-            if (minPay>10){
-            cout<<"$"<<minPay<<endl;
-            }
-            else if (minPay<=10){
-                cout<<"$10.00"<<endl;
-            }     
-        } 
+    char day1,day2;
+    int timeCal, lngtCal;
+    float costCal;
+    //prompt for call info
+    cout<<"Let's calculate the cost of your long distance call"<<endl;
+    cout<<"Enter the day of the week of the call "<<endl;
+    cout<<"Enter the day using the first 2 letters of the name of the day"<<endl;
+    cin>>day1>>day2;
+    cout<<"Enter the time that you started the call."<<endl;
+    cout<<"Enter the time using a 24 hours clock."<<endl;
+    cin>>timeCal;
+    cout<<"Enter the length of the call to the nearest minute"<<endl;
+    cin>>lngtCal;
+    
+    //begin if/else statement to determine charge per minute
+    if ((day1=='S'||day1=='s')&&(day2=='A'||day2=='a')){
+        //calc cost for Saturday call
+        costCal=lngtCal*.15;
+    }    
+    else if((day1=='S'||day1=='s')&&(day2=='U'||day2=='u')){
+        //calc cost for Sunday call
+        costCal=lngtCal*.15;
     }
-    else if (acctBal>1000){
-        //use variable newBal for the balance after
-        //the first $1000
-        newBal=acctBal-1000;
-        //calc interest
-        tmpInt2=1000*intrst1;
-        tmpInt3=newBal*intrst2;
-        //calc tot due
-        totDue=tmpInt2+tmpInt3+acctBal;
-        cout<<"The total amount due is"<<endl;
-        cout<<"$"<<totDue<<endl;
-        cout<<"The minimum payment due is"<<endl;
-        if (totDue<=10){
-            cout<<"$"<<totDue<<endl;
+    else if((day1=='M'||day1=='m')&&(day2=='O'||day2=='o')){
+        //determine call start time
+        if (timeCal>=800&&timeCal<=1800){
+          //calc cost for Monday call
+          costCal=lngtCal*.40;
         }
-        else if (totDue>10){
-            minPay=totDue*.10;
-            cout<<"$"<<minPay<<endl;
+        else{
+          costCal=lngtCal*.25;  
+        }
+    }    
+    else if((day1=='T'||day1=='t')&&(day2=='U'||day2=='u')){
+        //determine call start time
+        if (timeCal>=800&&timeCal<=1800){
+          //calc cost for Monday call
+          costCal=lngtCal*.40;
+        }
+        else{
+          costCal=lngtCal*.25;  
+        }   
+        
+    }
+    else if((day1=='W'||day1=='w')&&(day2=='E'||day2=='e')){
+        //determine call start time
+        if (timeCal>=800&&timeCal<=1800){
+          //calc cost for Monday call
+          costCal=lngtCal*.40;
+        }
+        else{
+          costCal=lngtCal*.25;  
+        }
+    } 
+    else if((day1=='T'||day1=='t')&&(day2=='H'||day2=='h')){
+        //determine call start time
+        if (timeCal>=800&&timeCal<=1800){
+          //calc cost for Monday call
+          costCal=lngtCal*.40;
+        }
+        else{
+          costCal=lngtCal*.25;  
         }
     }
-    //exit stage right
+    else if((day1=='F'||day1=='f')&&(day2=='R'||day2=='r')){
+        //determine call start time
+        if (timeCal>=800&&timeCal<=1800){
+          //calc cost for Monday call
+          costCal=lngtCal*.40;
+        }
+        else{
+          costCal=lngtCal*.25;  
+        }
+    }
+    
+            //set decimal place to 2
+        cout.setf(ios::fixed);
+        cout.setf(ios::showpoint);
+        cout.precision(2);
+        //output cost
+        cout<<"The total cost of the call is"<<endl;
+        cout<<"$"<<costCal<<endl;  
     return 0;
 }
