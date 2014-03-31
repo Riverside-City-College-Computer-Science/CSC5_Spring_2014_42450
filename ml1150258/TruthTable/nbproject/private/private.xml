@@ -4,11 +4,14 @@
         <activeConfTypeElem>1</activeConfTypeElem>
         <activeConfIndexElem>0</activeConfIndexElem>
     </data>
+<<<<<<< HEAD
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Jose/Desktop/CSC5_Spring_2014_42450/ml1150258/TruthTable/main.cpp</file>
+            <file>file:/C:/Users/Administrator/Documents/GitHub/CSC5_Spring_2014_42450/ml1150258/TruthTable/main.cpp</file>
         </group>
     </open-files>
+=======
+>>>>>>> origin/master
 </project-private>
