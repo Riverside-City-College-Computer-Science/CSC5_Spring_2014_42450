@@ -47,9 +47,26 @@ int main(int argc, char** argv) {
     //Output the third row
     y = true;
     x = false;
+    cout << (x? 'T' : 'F') << " ";
+    cout << (y? 'T' : 'F') << " ";
+    
+    cout << (!x? 'T' : 'F') << " ";
+    cout << (!y? 'T' : 'F') << " ";
+    
+    cout << (x||y? 'T' : 'F') << " ";
+    cout << (x&&y? 'T' : 'F') << " " << endl;
             
-   //Output the third row
+   //Output the fourth row
     y = false;
+    cout << (x? 'T' : 'F') << " ";
+    cout << (y? 'T' : 'F') << " ";
+    
+    cout << (!x? 'T' : 'F') << " ";
+    cout << (!y? 'T' : 'F') << " ";
+    
+    cout << (x||y? 'T' : 'F') << " ";
+    cout << (x&&y? 'T' : 'F') << " " << endl;
+   
     //Execution ends here
     return 0;
 }

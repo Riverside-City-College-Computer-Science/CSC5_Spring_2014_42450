@@ -1,7 +1,6 @@
 /* 
  * File:   main.cpp
  * Author: Cesar Obeso
- *
  * Created on March 16, 2014, 2:44 PM
  */
 
@@ -10,39 +9,13 @@
 #include <iostream>
  
 using namespace std;
- 
-#include "Employee.h"
- 
-int main()
-{
-   Employee employee1 ( "Jack" , "Miller", 1000);
-   Employee employee2 ( "Bill" , "Clinton", 2000);
- 
-   cout << "The new employees:\n" << employee1.getFirstName() << " " 
-     << employee1.getLastName() << " " << employee1.getSalary() << endl;
-   cout << employee2.getFirstName() << " " << employee2.getLastName() 
-     << " " << employee2.getSalary() << endl << endl;
- 
-   cout << "Yearly salary of employees:\n" 
-       << employee1.getFirstName() << " " << employee1.getLastName() << " " << (employee1.getSalary())*12 << endl;
-   cout << employee2.getFirstName() << " " << employee2.getLastName() << " " << (employee2.getSalary())*12 << endl;
- 
-   cout << "Increased yearly salary of employees:\n"
-        << employee1.getFirstName() << " " << employee1.getLastName() << " " << (employee1.getSalary())*12*1.1 << endl;
-   cout << employee2.getFirstName() << " " << employee2.getLastName() << " " << (employee2.getSalary())*12*1.1 << endl;
- 
-   system("PAUSE");  
-   return 0;
-}
-
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
- 
-using namespace std;
- 
 class Employee
 {
+private:
+  string firstName;
+  string lastName;
+  int salary;
+
 public:
   Employee(string initFirstName, string initLastName, int initSalary);
   void setFirstName( string );
@@ -51,21 +24,8 @@ public:
   string getLastName();
   void setSalary( int );
   int getSalary();
- 
-private:
-  string firstName;
-  string lastName;
-  int salary;
 };
 
-#include <cstdio>
-#include <cstdlib>
-#include <iostream>
- 
-using namespace std;
- 
-#include "Employee.h"
- 
 //initialization with constructor
 Employee::Employee(string initFirstName, string initLastName, int initSalary)
 {
@@ -111,5 +71,27 @@ void Employee::setSalary( int initSalary)
 int Employee::getSalary()
 {
   return salary;
+}
+ 
+int main()
+{
+   Employee employee1 ( "Jack" , "Miller", 1000);
+   Employee employee2 ( "Bill" , "Clinton", 2000);
+ 
+   cout << "The new employees:\n" << employee1.getFirstName() << " " 
+     << employee1.getLastName() << " " << employee1.getSalary() << endl;
+   cout << employee2.getFirstName() << " " << employee2.getLastName() 
+     << " " << employee2.getSalary() << endl << endl;
+ 
+   cout << "Yearly salary of employees:\n" 
+       << employee1.getFirstName() << " " << employee1.getLastName() << " " << (employee1.getSalary())*12 << endl;
+   cout << employee2.getFirstName() << " " << employee2.getLastName() << " " << (employee2.getSalary())*12 << endl;
+ 
+   cout << "Increased yearly salary of employees:\n"
+        << employee1.getFirstName() << " " << employee1.getLastName() << " " << (employee1.getSalary())*12*1.1 << endl;
+   cout << employee2.getFirstName() << " " << employee2.getLastName() << " " << (employee2.getSalary())*12*1.1 << endl;
+ 
+   system("PAUSE");  
+   return 0;
 }
 
