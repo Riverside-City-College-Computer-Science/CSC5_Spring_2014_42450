@@ -7,6 +7,7 @@
 
 //System Libraries
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 //Global Constants
@@ -84,12 +85,37 @@ float hat(float hght_parm, float wght_parm)
 
 float jacket(float hght_parm, float wght_parm)
 {
-    float hghtF, hghtI;
+    float n, hghtF, hghtI, age, hatSiz;
     hght_parm = (hghtF*CNVINCH)+hghtI;
-    return hght_parm*(wght_parm/288);
+    if ((age>=40)||(age<50))
+        n=hght_parm*(wght_parm/288)+(1/8);
+    if ((age>=50)||(age<60))
+        n=hght_parm*(wght_parm/288)+(2/8);
+    if ((age>=60)||(age<70))
+        n=hght_parm*(wght_parm/288)+(3/8);
+    if ((age>=70)||(age<80))
+        n=hght_parm*(wght_parm/288)+(4/8);
+    if ((age>=80)||(age<90))
+        n=hght_parm*(wght_parm/288)+(5/8);
+    if ((age>=90)||(age<100))
+        n=hght_parm*(wght_parm/288)+(6/8);
+    if ((age>=100)||(age<110))
+        n=hght_parm*(wght_parm/288)+(7/8);
+    if ((age>=110)||(age<120))
+        n=hght_parm*(wght_parm/288)+(8/8);
+    if ((age>=120)||(age<130))
+        n=hght_parm*(wght_parm/288)+(8/8);
+    else
+        n=hght_parm*(wght_parm/288);
+    return (n);
 }
 
 float size(float wght_parm)
 {
-    return (wght_parm/5.7);
+    float age, w;
+    if ((age>28)&&(age%2=0))
+        w=(wght_parm/5.7)+(1/10);
+    else
+        w=(wght_parm/5.7);
+    return (w) ;
 }
