@@ -22,7 +22,7 @@ int main(int argc, char** argv) {
     cel=100;
     far=((9*cel)/5)+32;   
     //Loop to turn find when Celsius and Fahrenheit match 
-    while (cel!=far)
+    while (cel!=far)//if Celsius is not equal to Fahrenheit, run loop.
     {
         cel=cel-1;
         far=((9*cel)/5)+32;        

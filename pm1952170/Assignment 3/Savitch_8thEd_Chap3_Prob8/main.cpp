@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
         if (cOne=='6')cOne=6;
         if (cOne=='7')cOne=7;
         if (cOne=='8')cOne=8;
-        if (cOne=='9')cOne=9;
+        if (cOne=='9')cOne=9;       
         tot=cOne;
         //if values for characters for card 2
         if ((cTwo=='a'||cTwo=='A')&&(cOne>10))cTwo=1;
@@ -65,7 +65,7 @@ int main(int argc, char** argv) {
         if (cTwo=='6')cTwo=6;
         if (cTwo=='7')cTwo=7;
         if (cTwo=='8')cTwo=8;
-        if (cTwo=='9')cTwo=9;
+        if (cTwo=='9')cTwo=9;        
         tot1=cOne+cTwo;
         //if hand is larger than 21 = BUSTED
         if(tot1>21)        
