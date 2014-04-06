@@ -25,7 +25,7 @@ int main(int argc, char** argv) {
 //Declare Variables
     float wght, hght, hghtF, hghtI, hatSize, jacSize, waiSize;
     int age;
-    
+    //Input age, height, and weight
     cout<<"\n";
     cout<<"Enter your age: ";
     cin>>age;
@@ -66,7 +66,7 @@ int main(int argc, char** argv) {
     cout<<waiSize;
     cout<<" inches";
     cout<<"\n";
-            
+    //Exit Stage Right        
     return 0;
 }
 

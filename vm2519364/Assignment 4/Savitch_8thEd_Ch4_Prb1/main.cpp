@@ -23,7 +23,7 @@ float cnsmd(float gas_par, float dist_par);//Function Declaration
 int main(int argc, char** argv) {
     //Declared Variable
     float mpg, gas, dist;
-    
+    //Input data required for calculation
     cout<<"Enter the amount of gas consumed on your trip, in liters: ";
     cin>>gas;
     cout<<"\n";
@@ -34,9 +34,11 @@ int main(int argc, char** argv) {
     gas=(gas*CNVGALL);
     //Function Call
     mpg=cnsmd(gas, dist);
+    //Set decimal precision
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);
+    //Output Data
     cout<<"Your car has traveled ";
     cout<<dist;
     cout<<" miles, using ";
