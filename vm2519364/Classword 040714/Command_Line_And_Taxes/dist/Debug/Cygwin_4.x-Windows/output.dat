@@ -1,0 +1,17 @@
+Calculate your State Taxesfrom the $'s which you input
+Income = $5000
+Taxes = $0
+Income = $10000
+Taxes = $0
+Income = $20000
+Taxes = $250
+Income = $30000
+Taxes = $1500
+Income = $40000
+Taxes = $2500
+Income = $50000
+Taxes = $3500
+Income = $60000
+Taxes = $4500
+Income = $70000
+Taxes = $5500
