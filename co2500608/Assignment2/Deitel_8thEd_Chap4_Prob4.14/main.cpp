@@ -1,7 +1,6 @@
 /* 
  * File:   main.cpp
  * Author: Cesar Obeso
- *
  * Created on March 16, 2014, 7:42 PM
  */
 

@@ -23,6 +23,12 @@ int main(int argc, char** argv) {
     cout<<"2. Gaddis 8th Edition Chapter 4 Problem 10"<<endl;
     cout<<"3. Deitel 8th Edition Chapter 2 Problem 23"<<endl;
     cout<<"4. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"5. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"6. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"7. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"8. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"9. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
+    cout<<"10. Eckel 8th Edition Chapter 1 Problem 9"<<endl;
     cin>>choose;
     //Utilize switch to implement the menu
     switch(choose){
@@ -39,6 +45,30 @@ int main(int argc, char** argv) {
             break;
         }
         case 4:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 5:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 6:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 7:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 8:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 9:{
+            cout<<"Place solution to problem 9 here!"<<endl;
+            break;
+        }
+        case 10:{
             cout<<"Place solution to problem 9 here!"<<endl;
             break;
         }
