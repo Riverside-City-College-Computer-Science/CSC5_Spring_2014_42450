@@ -10,8 +10,12 @@
 using namespace std;
 
 //Global Constants
+const float CNVGALL=0.264179;//Conversion of one liter to gallon (Problem 1 & 2)
+
 
 //Function Prototypes
+float cnsmd(float gas_par, float dist_par);//Function for Problem 1
+float infla(float lstYr_parm, float today_parm);//
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -28,20 +32,98 @@ int main(int argc, char** argv) {
     cout<<"7. Savitch 8th Edition Chapter 4 Problem 12"<<endl;
     cout<<"8. Savitch 8th Edition Chapter 4 Problem 14"<<endl;
     cout<<"9. Savitch 8th Edition Chapter 4 Problem 15"<<endl;
-    cout<<"10. Savitch 8th Edition Chapter 4 Problem 1"<<endl;
+    cout<<"10. Savitch 8th Edition Chapter 4 Problem 9"<<endl;
     cin>>choose;
     //Utilize switch to implement the menu
     switch(choose){
         case 1:{
             //Start of Problem 1
-            cout<<"Place solution to problem 1 here!"<<endl;
-            //Ed of Problem 1
+             //Declared Variable
+                    float mpg, gas, dist;
+                    //Input data required for calculation
+                    cout<<"Enter the amount of gas consumed on your trip, in liters: ";
+                    cin>>gas;
+                    cout<<"\n";
+                    cout<<"Enter the total distance traveled by the car, in miles: ";
+                    cin>>dist;
+                    cout<<"\n";
+                    //Convert amount of gas from liters to gallons
+                    gas=(gas*CNVGALL);
+                    //Function Call
+                    mpg=cnsmd(gas, dist);
+                    //Set decimal precision
+                    cout.setf(ios::fixed);
+                    cout.setf(ios::showpoint);
+                    cout.precision(2);
+                    //Output Data
+                    cout<<"Your car has traveled ";
+                    cout<<dist;
+                    cout<<" miles, using ";
+                    cout<<gas;
+                    cout<<" gallons of gas.\n";
+                    cout<<"\n";
+                    cout<<"Your car delivered ";
+                    cout<<mpg;
+                    cout<<" miles per gallon.\n";
+            //End of Problem 1
             break;
         }
         case 2:{
             //Start of Problem 2
-           cout<<"Place solution to problem 10 here!"<<endl;
-           //End of Problem 2
+           //Declared Variable
+                    float mpg, mpgTwo, gas, gasTwo, dist, distTwo;
+                    //Input Car One Info
+                    cout<<"Enter the amount of gas consumed by car 1 on your trip, in liters: ";
+                    cin>>gas;
+                    cout<<"\n";
+                    cout<<"Enter the total distance traveled by the car 1, in miles: ";
+                    cin>>dist;
+                    cout<<"\n";
+                    //Input Car Two Info
+                    cout<<"Enter the amount of gas consumed by car 2 on your trip, in liters: ";
+                    cin>>gasTwo;
+                    cout<<"\n";
+                    cout<<"Enter the total distance traveled by the car 2, in miles: ";
+                    cin>>distTwo;
+                    cout<<"\n";
+                    //Convert amount of gas from liters to gallons
+                    //gas=(gas*CNVGALL);
+                    //gasTwo=(gasTwo*CNVGALL);
+                    //Function Call
+                    mpg=cnsmd(gas, dist);
+                    mpgTwo=cnsmd(gasTwo, distTwo);
+                    //Set decimal precision
+                    cout.setf(ios::fixed);
+                    cout.setf(ios::showpoint);
+                    cout.precision(2);
+                    //Output Car One Info
+                    cout<<"Car 1 has traveled ";
+                    cout<<dist;
+                    cout<<" miles, using ";
+                    cout<<(gas*CNVGALL);
+                    cout<<" gallons of gas.\n";
+                    cout<<"\n";
+                    cout<<"Car 1 delivered ";
+                    cout<<mpg;
+                    cout<<" miles per gallon.\n";
+                    cout<<"\n";
+                    //Output Car Two Info
+                    cout<<"Car 2 has traveled ";
+                    cout<<distTwo;
+                    cout<<" miles, using ";
+                    cout<<(gasTwo*CNVGALL);
+                    cout<<" gallons of gas.\n";
+                    cout<<"\n";
+                    cout<<"Car 2 delivered ";
+                    cout<<mpgTwo;
+                    cout<<" miles per gallon.\n";
+                    cout<<"\n";
+                    //Determine what car is more fuel efficient
+                    if (mpg<mpgTwo)
+                        cout<<"Car 2 has the best fuel efficiency.\n";
+                    else
+                        cout<<"Car 1 has the best fuel efficiency.\n";
+          //End of Problem 2
            break;
         }
         case 3:{
@@ -87,7 +169,9 @@ int main(int argc, char** argv) {
             break;
         }
         case 10:{
+            //Start of Problem 9
             cout<<"Place solution to problem 9 here!"<<endl;
+            //End of Problem 9
             break;
         }
         default:{
@@ -101,3 +185,8 @@ int main(int argc, char** argv) {
     return 0;
 }
 
+//Solution to Problem 1 & 2
+float cnsmd(float gas_par, float dist_par) //Function Heading
+{
+    return (dist_par/gas_par);
+}
