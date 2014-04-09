@@ -9,10 +9,7 @@
 //Take out if not needed
 #include <cstdlib>//srand
 #include <iostream>//standard input ouput
-#include <fstream>//file input/output
 #include <ctime>//time for random and program
-#include <iomanip>//formatting
-#include <cmath>//math functions
 using namespace std;
 
 //Global Constants
