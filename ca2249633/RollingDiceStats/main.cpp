@@ -6,20 +6,18 @@
  */
 
 //System Libraries
-//Take out if not needed
 #include <cstdlib>//srand
 #include <iostream>//standard input ouput
 #include <ctime>//time for random and program
 using namespace std;
 
 //Global Constants
-//If not a global constant, get an F
 
 //Function prototypes
 
 //Execution Begins Here
 int main(int argc, char** argv) {
-    //Declare Menu variables
+    //Initialize random number seed
     srand(static_cast<unsigned int>(time(0)));
     //declare variables
     unsigned char sum,die1,die2;
