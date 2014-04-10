@@ -21,8 +21,7 @@ float concal(float calCons_parm);
 //Returns Calories Required to Consume Calories
 
 //Execution Begins Here
-int main(int argc, char** argv) {
-    
+int main(int argc, char** argv) {   
 //Declare Variables
 float physicl, wght, calCons, bmi, consum, totcal;
 int inten, mins;
