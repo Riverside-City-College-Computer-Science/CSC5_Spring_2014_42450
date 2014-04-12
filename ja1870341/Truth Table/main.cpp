@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     cout<<"X^Y X^Y^X X^YY !(X&&Y) ";
     cout<<"!X||Y !(X||Y) !X&&!Y"<<endl;
     //Output first row
-     cout<<(x?'T':'F')<<" ";
+    cout<<(x?'T':'F')<<" ";
     cout<<(y?'T':'F')<<" ";
     cout<<(!x?'T':'F')<<" ";
     cout<<(!y?'T':'F')<<" ";
