@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Adams_MENU_TEMPLATE
+PROJECTNAME=savitch_8thE_Chp4_Prb5_Inflation2
 
 # Active Configuration
 DEFAULTCONF=Debug
