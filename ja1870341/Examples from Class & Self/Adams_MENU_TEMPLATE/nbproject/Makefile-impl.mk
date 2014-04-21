@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=adams_menu_template
+PROJECTNAME=Adams_MENU_TEMPLATE
 
 # Active Configuration
 DEFAULTCONF=Debug

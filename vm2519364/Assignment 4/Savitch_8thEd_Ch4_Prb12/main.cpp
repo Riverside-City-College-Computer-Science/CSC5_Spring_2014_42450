@@ -22,8 +22,6 @@ float max(float n1, float n2);
 //Execution Starts Here
 int main(int argc, char** argv) {
     float a, b, n1, n2, n3;
-    
-    
     cout<<"\n";
     cout<<"Enter three numbers\n";
     cout<<"\n";
@@ -33,13 +31,10 @@ int main(int argc, char** argv) {
     cout<<"\n";
     cin>>n3;
     cout<<"\n";
-    
     a=max(n1,n2,n3);
-    
     cout<<"The largest number is: ";
     cout<<a;
     cout<<"\n";   
-    
     cout<<"\n";
     cout<<"Enter two numbers\n";
     cout<<"\n";
@@ -47,14 +42,10 @@ int main(int argc, char** argv) {
     cout<<"\n";
     cin>>n2;
     cout<<"\n";
-    
     b=max(n1,n2);
-    
     cout<<"The largest number is: ";
     cout<<b;
     cout<<"\n"; 
-    
-    
     //Exit Stage Right
     return 0;
 }

@@ -1,8 +1,8 @@
 /* 
  * File:   main.cpp
  * Author: Victor Medel
- * Created on March 31, 2014, 7:19 PM
- * Purpose: Calculate Clothing Size
+ * Created on April 5, 2014, 11:05 AM
+ * Purpose: Clothes Size Calculator
  */
 
 //System Libraries
@@ -11,111 +11,98 @@
 using namespace std;
 
 //Global Constants
-float CNVINCH=12;
 
 //Function Prototypes
+float hat(float wght_parm, float hght_parm);
+//Returns hat size
+float jacket(float wght_parm, float hght_parm, int age_parm);
+//Returns jacket size
+float waist(float wght_parm, int age_parm);
+//Returns waist size
 
-float hat(float hght_parm, float wght_parm);
-//Returns size of a hat based on height, and weight.
-//The formal parameter named hght_parm is the person's height in inches
-//The formal parameter named wght_parm is the person's weight in pounds
-float jacket(float hght_parm, float wght_parm);
-//Returns size of a jacket based on height, weight, and age.
-//The formal parameter named hght_parm is the person's height in inches
-//The formal parameter named wght_parm is the person's weight in pounds
-float size(float wght_parm);
-//Returns size of clothing based on weight and age
-//the formal parameter named wght_parm is the person's weight in pounds
-
-
-//Execution Begins Here
+//Execution Starts Here
 int main(int argc, char** argv) {
-    //Declare Variables
-    float hatSiz, jcktSiz, waist, hght, hghtF, hghtI, wght, age;
-    
+//Declare Variables
+    float wght, hght, hghtF, hghtI, hatSize, jacSize, waiSize;
+    int age;
+    //Input age, height, and weight
     cout<<"\n";
-    cout<<"Calculate clothing size based on height, weight, and age. ";
+    cout<<"Enter your age: ";
+    cin>>age;
     cout<<"\n";
+    cout<<"Enter your height, feet and then inches.";
     cout<<"\n";
-    cout<<"Enter your height (feet then inches)";
-    cout<<"\n";
-    cout<<"feet: ";
+    cout<<"Feet: ";
     cin>>hghtF;
-    cout<<"inches: ";
+    cout<<"Inches: ";
     cin>>hghtI;
     cout<<"\n";
     cout<<"Enter your weight (in pounds): ";
     cin>>wght;
     cout<<"\n";
-    cout<<"Enter your age (in years): ";
-    cin>>age;
-    cout<<"\n";
     
     
+    //Convert Feet to Inches
+    hght=(hghtF*12)+hghtI;
     
-    hatSiz = hat(hght, wght);
-    jcktSiz = jacket(hght, wght);
-    waist = size(wght);
-    
+    //Function Call
+    hatSize = hat(wght, hght);
+    jacSize = jacket(wght, hght, age);
+    waiSize = waist(wght, age);
+    //Decimal Precision
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
-    cout.precision(2);
-    
-    cout<<"Results";
+    cout.precision(2);   
+    //Output Clothing Sizes
     cout<<"\n";
-    cout<<"Hat Size: ";
-    cout<<hatSiz;
+    cout<<"Hat size: ";
+    cout<<hatSize;
     cout<<"\n";
-    cout<<"Jacket Size: ";
-    cout<<jcktSiz;
+    cout<<"Jacket size: ";
+    cout<<jacSize;
+    cout<<" inches";
     cout<<"\n";
-    cout<<"Waist Size: ";
-    cout<<waist;
+    cout<<"Waist size: ";
+    cout<<waiSize;
+    cout<<" inches";
     cout<<"\n";
-    //Exit Stage Right
+    //Exit Stage Right        
     return 0;
 }
 
-float hat(float hght_parm, float wght_parm)
+float hat(float wght_parm, float hght_parm)
 {
-    float hghtF, hghtI;
-    hght_parm = (hghtF*CNVINCH)+hghtI;
-    return (wght_parm/hght_parm)*2.9;
+    float h;
+       h=(wght_parm/hght_parm)*2.9;
+    return (h);
 }
 
-float jacket(float hght_parm, float wght_parm)
+float jacket(float wght_parm, float hght_parm, int age_parm)
 {
-    float n, hghtF, hghtI, age, hatSiz;
-    hght_parm = (hghtF*CNVINCH)+hghtI;
-    if ((age>=40)||(age<50))
-        n=hght_parm*(wght_parm/288)+(1/8);
-    if ((age>=50)||(age<60))
-        n=hght_parm*(wght_parm/288)+(2/8);
-    if ((age>=60)||(age<70))
-        n=hght_parm*(wght_parm/288)+(3/8);
-    if ((age>=70)||(age<80))
-        n=hght_parm*(wght_parm/288)+(4/8);
-    if ((age>=80)||(age<90))
-        n=hght_parm*(wght_parm/288)+(5/8);
-    if ((age>=90)||(age<100))
-        n=hght_parm*(wght_parm/288)+(6/8);
-    if ((age>=100)||(age<110))
-        n=hght_parm*(wght_parm/288)+(7/8);
-    if ((age>=110)||(age<120))
-        n=hght_parm*(wght_parm/288)+(8/8);
-    if ((age>=120)||(age<130))
-        n=hght_parm*(wght_parm/288)+(8/8);
-    else
-        n=hght_parm*(wght_parm/288);
-    return (n);
+    float j;
+    if ((age_parm>30)&&(age_parm%10==0)){
+       j=((hght_parm*wght_parm)/288)+(((age_parm-30)/10)*0.125);
+    }else if ((age_parm>40)&&(age_parm%10!=0)){ 
+        age_parm=((age_parm/10.0)-((age_parm%10)/10.0))*10;//when the % is used it returns whole numbers | had to divide by 10
+       j=((hght_parm*wght_parm)/288)+(((age_parm-30)/10)*0.125);
+    }else    
+        j=(hght_parm*wght_parm)/288;
+    return (j);
+          
 }
 
-float size(float wght_parm)
+float waist(float wght_parm, int age_parm)
 {
-    float age, w;
-    if ((age>28)&&(age%2=0))
-        w=(wght_parm/5.7)+(1/10);
-    else
-        w=(wght_parm/5.7);
-    return (w) ;
+    float w;
+        
+     if ((age_parm>28)&&(age_parm%2==0)){
+           w=(wght_parm/5.7)+(((age_parm-28)/2)*0.1);    
+    }else if ((age_parm>28)&&(age_parm%2!=0)){
+           age_parm=age_parm-1;//decrease age by 1 to make sure that the number calculated will be even
+           w=(wght_parm/5.7)+(((age_parm-28)/2)*0.1);
+    }else      
+        w=(wght_parm)/5.7;
+        
+    return (w);
+           
 }
