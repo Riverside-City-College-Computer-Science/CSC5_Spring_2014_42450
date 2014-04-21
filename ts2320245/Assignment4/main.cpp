@@ -141,7 +141,7 @@ int main(int argc, char** argv) {
 
 
 
-                              cout << "The largest number is "<< lrgstnum<< endl; 
+                              cout << "\nThe largest number is "<< lrgstnum<< endl; 
                               cout << "The second largest number is "<< secondlrgst<< endl; 
                               cout <<"\n\n\n\n";
 
@@ -181,8 +181,8 @@ int main(int argc, char** argv) {
                                      << "\nB:" << bCount
                                      << "\nC:" << cCount
                                      << "\nD:" << dCount
-                                     << "\nF:" << fCount;
-                                cout <<"\n\n\n\n";
+                                     << "\nF:" << fCount << "\nI couldnt really get this program to run effectively.";
+                                cout <<"\n\n\n\n ";
         
                 break;
             }
@@ -323,118 +323,118 @@ int main(int argc, char** argv) {
             }
             case 7:{
                
-/* 
- * File:   main.cpp
- * Author: Saldana, Thomas
- * Problem1: SUM OF NUMBERS
- *          Write a program that asks the user for a positive integer value. The program should us a loop to 
- *          get the sum of all the integers from 1 up to the number entered. For example, if the user enters 50, 
- *          the loop will find the sum of 1,2,3,4, ...50. 
- *
- * Created on April 3, 2014, 1:44 PM
- */
-                  int num, newnum,total = 0, sum =0; //Declaration of Variables
+                            /* 
+                             * File:   main.cpp
+                             * Author: Saldana, Thomas
+                             * Problem1: SUM OF NUMBERS
+                             *          Write a program that asks the user for a positive integer value. The program should us a loop to 
+                             *          get the sum of all the integers from 1 up to the number entered. For example, if the user enters 50, 
+                             *          the loop will find the sum of 1,2,3,4, ...50. 
+                             *
+                             * Created on April 3, 2014, 1:44 PM
+                             */
+                            int num, newnum,total = 0, sum =0; //Declaration of Variables
     
-    cout << "Enter a positive, whole number, and the computer will add all of the numbers that come before that number.\n";
-    cin >>num;
-    // checks for negative numbers.
-    while ( num < 0){
-        cout << "The number you have entered is not a positive number. Please follow instructions, and try again. \n";
-                cin >> num;
-    }
-   // adds the numbers from 1 up to the  number the user chooses
-    for ( int i= 1 ; i <= num  ; i++  ){
-        sum = sum + i ;
-        
-    }
-       
-      cout << "The sum from 1 up to the number you chose is : " << sum << endl;      
-    
-  
+                            cout << "Enter a positive, whole number, and the computer will add all of the numbers that come before that number.\n";
+                            cin >> num;
+                            // checks for negative numbers.
+                            while ( num < 0){
+                                cout << "The number you have entered is not a positive number. Please follow instructions, and try again. \n";
+                                        cin >> num;
+                            }
+                           // adds the numbers from 1 up to the  number the user chooses
+                            for ( int i= 1 ; i <= num  ; i++  ){
+                                sum = sum + i ;
 
-    //Exit stage right.
-      cout <<"\n\n\n\n";
+                            }
+
+                              cout << "The sum from 1 up to the number you chose is : " << sum << endl;      
+
+
+
+                            //Exit stage right.
+                              cout <<"\n\n\n\n";
                 break;
             }
             case 8:{
-               /* 
- * File:   main.cpp
- * Author: Saldana, Thomas
- *Problem21: Write code that lets the user enter a number. The number should be multiplied by 2 
-             and printed until the number exceeds 50. Use a while loop.
- * Created on April 10, 2014, 11:33 PM
- */
-                  float num, i=0;
+                             /* 
+                             * File:   main.cpp
+                             * Author: Saldana, Thomas
+                             *Problem21: Write code that lets the user enter a number. The number should be multiplied by 2 
+                                         and printed until the number exceeds 50. Use a while loop.
+                             * Created on April 10, 2014, 11:33 PM
+                             */
+                            float num, i=0;
     
-    cout << "Enter a number, and the computer will multiply and print that number by two until the number exceeds 50.\n";
-    cin >> num;
-    
-    
-    
-    
-    while (i++<=50){
-        num= num*2;
-    cout << num << " ";
-    }
-    cout <<"\n\n\n\n";
+                            cout << "Enter a number, and the computer will multiply and print that number by two until the number exceeds 50.\n";
+                            cin >> num;
+
+
+
+
+                            while (i++<=50){
+                                num= num*2;
+                            cout << num << " ";
+                            }
+                            cout <<"\n\n\n\n";
                 break;
             }
             case 9:{
                 /* 
- * File:   main.cpp
- * Author: Saldana, Thomas
- * Problem 23: Write a for loop that displays the following set of numbers:
-                            0, 10, 20, 30, 40, 50 . . . 1000
- * Created on April 11, 2014, 12:13 AM
- */
-                 cout << "This program displays the following set of numbers: 0, 10, 20, 30, 40, 50 . . . 1000 using the for repetition structure.\n\n\n";
-    
-    for (int i=0; i<=1000; i+=10)
-        cout << i << " ";
-                 cout <<"\n\n\n\n";
-                break;
+                             * File:   main.cpp
+                             * Author: Saldana, Thomas
+                             * Problem 23: Write a for loop that displays the following set of numbers:
+                                                        0, 10, 20, 30, 40, 50 . . . 1000
+                             * Created on April 11, 2014, 12:13 AM
+                             */
+                            cout << "This program displays the following set of numbers: 0, 10, 20, 30, 40, 50 . . . 1000 using the for repetition structure.\n\n\n";
+
+                            for (int i=0; i<=1000; i+=10)
+                                cout << i << " ";
+                                         cout <<"\n\n\n\n";
+                                        break;
             }
              case 10:{
-                /* 
- * File:   main.cpp
- * Author: Saldana, Thomas
- *
- * Created on April 7, 2014, 9:36 AM
- * Chap 3 Problem 10: Fibonacci Sequence
- */
-                   
-    //Declare Variables
-    int fi,fim1,fim2;
-    int term, cndStop;
-    //Initialization of variables.
-    fim1=10;
-    fim2=10;
-    fi=fim1+fim2;
-    term =3;
-    //Input the term to stop the sequence
-    //sequence
-    cout <<"How many terms in the fibonacci";
-    cout <<"sequence will you like to calculate?"<< endl;
-    cin >> cndStop;
-    //Print out the initial terms
-    cout << "Fibonacci Sequence = " << fim2 <<", "<< fim1 << ", " << fi << ", ";
-    // Loop through the sequence
-    
-    do {
-        fim2=fim1;
-        fim1=fi;
-        fi=fim1+fim2;
-        //output the next term 
-        if (term<cndStop-1)cout << fi <<", ";
-        else cout <<fi;
-    }while (++term<cndStop);
-    cout << "}\n";
-    
-    cout << "\n\n\n\n";
-    
-    
-    
-//Exit Stage Right.
+                                        /* 
+                             * File:   main.cpp
+                             * Author: Saldana, Thomas
+                             *
+                             * Created on April 7, 2014, 9:36 AM
+                             * Chap 3 Problem 10: Fibonacci Sequence
+                             */
+
+                            //Declare Variables
+                            int fi,fim1,fim2;
+                            int term, cndStop;
+                            //Initialization of variables.
+                            fim1=10;
+                            fim2=10;
+                            fi=fim1+fim2;
+                            term =3;
+                            //Input the term to stop the sequence
+                            //sequence
+                            cout <<"How many terms in the fibonacci";
+                            cout <<"sequence will you like to calculate?"<< endl;
+                            cin >> cndStop;
+                            //Print out the initial terms
+                            cout << "Fibonacci Sequence = " << fim2 <<", "<< fim1 << ", " << fi << ", ";
+                            // Loop through the sequence
+
+                            do {
+                                fim2=fim1;
+                                fim1=fi;
+                                fi=fim1+fim2;
+                                //output the next term 
+                                if (term<cndStop-1)cout << fi <<", ";
+                                else cout <<fi;
+                            }while (++term<cndStop);
+                            cout << "}\n";
+
+                            cout << "\n\n\n\n";
+
+
+
+                        //Exit Stage Right.
                 break;
             }
             default: exitMnu=true;
