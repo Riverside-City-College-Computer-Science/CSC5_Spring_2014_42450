@@ -14,7 +14,8 @@ using namespace std;
 //Global variables and constants
 
 //Function prototypes
-int s_Length(int);
+int s_Length(int);              //3n+1 function for a single input value
+int r_Length(int, int);         //3n+1 function for a range of values
 //Execution begins HERE
 int main(int argc, char** argv) {
     //Declare functions
@@ -34,6 +35,7 @@ int main(int argc, char** argv) {
     }while(n > 1);
     cout << endl << "Sequence Length: " << ctr << endl;
     cout << endl << "Sequence Length: " << s_Length(strtSeq) << endl;
+    cout << "For a range of values from 20 to " << strtSeq << " the max = " << r_Length(20, strtSeq);
     return 0;
 }
 //Function definitions
@@ -45,4 +47,13 @@ int s_Length(int n){
         ct++;
     }while(n > 1);
     return ct;
+}
+int r_Length(int start, int stop){
+    int max = 1;                                //initialize the maximum length
+    for(int i = start; i <= stop; i++){         //loop until the stop point is reached
+        int seqlen = s_Length(i);               //find the sequence length for i
+        if(max < seqlen) max = seqlen;          //if maximum length is greater than the current maximum valur
+                                                //change the maximum to the new maximum length
+    }
+    return max;
 }
