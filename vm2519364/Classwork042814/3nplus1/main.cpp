@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-
+int rngLen(int strt, int stp);
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -41,6 +41,8 @@ int main(int argc, char** argv) {
     cout<<endl<<"Sequence Length = "<<counter<<endl;
     cout<<endl<<"Sequence Length = "<<seqLen<<endl;
     
+    cout<<"For a range of values 20 to "<<strtSeq<<" the max = "<<rngLen(20, strtSeq)<<endl;
+    
     //Exit Stage Right
     return 0;
 }
@@ -56,4 +58,15 @@ int seqLen(int n){
    
     return counter;
     
+}
+
+int rngLen(int strt, int stp){
+    //Initialize the maximum Length
+    int max=1;
+    for(int i=strt;i<=stp;i++){
+        int len=seqLen(i);
+        if(max<len)max=len;
+    }
+    
+    return max;
 }
