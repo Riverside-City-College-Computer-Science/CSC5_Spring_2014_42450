@@ -16,7 +16,6 @@ using namespace std;
 //Global constants
 
 //Function Prototypes
-int rngLen(int,int);
 int seqLen(int);
 //Execution Begins here!
 int main(int argc, char** argv) {
@@ -31,28 +30,20 @@ int main(int argc, char** argv) {
     cout<<n<<" ";
     //loop until n=1
     do{
+        //if(n%2){n=3*n+1;}
+        //else{n/=2;}
+        //ternary op
+        //take n -> mod 2 and check -> if true, 3*n+1 -> else n/2
+        //n=n%2?3*n+1:n/2;
         //shift to left(<<1) = *2,shift to right (>>1) = /2
         //shift if faster than normal operators for * and /
         n=n%2?n+(n<<1)+1:n>>1;
-        counter++;
+        //counter++;
         cout<<n<<" ";
     }while(n>1);
-    //output results
-    cout<<endl<<"Sequence length = "<<counter;//with counter
-    cout<<endl<<"Sequence length = "<<seqLen(strtSeq);//with function
-    cout<<endl<<"For a range of values 20 to "<<strtSeq
-        <<" the max = "<<rngLen(20,strtSeq)<<endl;
+    cout<<endl<<"Sequence length = "<<seqLen(strtSeq)<<endl;
     //Exit Stage Right!!
     return 0;
-}
-int rngLen(int strt, int stp){
-    //initialize maximum length
-    int max=1;
-    for(int i=strt;i<=stp;i++){
-        int len=seqLen(i);
-        if(max<len)max=len;
-    }
-    return max;
 }
 int seqLen(int n){
     //initialize counter
