@@ -6,8 +6,8 @@
  * Purpose: Output a diagonal of *'s 
  */
 #include <iostream>
-#include <cstdlib>
-#include <cstring>
+//#include <cstdlib>
+//#include <cstring>
 
 using namespace std;
 
