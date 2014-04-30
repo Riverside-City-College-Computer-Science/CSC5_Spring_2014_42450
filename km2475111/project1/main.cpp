@@ -80,11 +80,6 @@ int main(int argc, char** argv) {
         cin>>plyrNme;
         cout<<endl;
         do{
-            //offer list of five classes to play
-            if(cnvChce!=1&&cnvChce!=2&&cnvChce!=3&&cnvChce!=4&&cnvChce!=5){
-                    cout<<"Pick a proper action. Try again."<<endl
-                        <<"///////////////////////////////"<<endl;
-            }else{}
             //based on user choice of class, apply switch menu
             cout<<"So "<<plyrNme<<", please pick a class type!"<<endl
                 <<"//////////////////////////////"<<endl
@@ -95,7 +90,12 @@ int main(int argc, char** argv) {
                 <<"5. Onion Knight - A special warrior, stats unknown..."<<endl
                 <<"//////////////////////////////"<<endl;
             cin>>choice;
-            cnvChce=choice-'0';     
+            cnvChce=choice-'0';
+            //offer list of five classes to play
+            if(cnvChce!=1&&cnvChce!=2&&cnvChce!=3&&cnvChce!=4&&cnvChce!=5){
+                    cout<<"Pick a proper action. Try again."<<endl
+                        <<"///////////////////////////////"<<endl;
+            }else{}
         }while(cnvChce!=1&&cnvChce!=2&&cnvChce!=3&&cnvChce!=4&&cnvChce!=5);
         /////////menu for player class creation////////
         switch(cnvChce){
@@ -426,7 +426,11 @@ void recvr(string clssTyp,int &pHP,int pSPR){//calculates unit healing
     if(clssTyp=="Onion Knight"){
         if(pHP>200){pHP=200;}
         else{}
-    }//sets health to 100 if greater
+    }//sets health to max if greater
+    else if(clssTyp=="Gladiator"){
+        if(pHP>300){pHP=300;}
+        else{}
+    }
     else if(pHP>250){pHP=250;}
     else{}
     cout<<"You recovered "<<tmp<<" HP!"<<endl
