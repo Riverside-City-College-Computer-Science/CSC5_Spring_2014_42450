@@ -51,6 +51,9 @@ void cnvrt(float& feet, float& inch, float& mtrs, float& cmtrs){
         cmtrs=mtrs*100;     
 }
 void outpt(float& feet, float& inch, float& mtrs, float& cmtrs){
+    cout.setf(ios::fixed);
+    cout.setf(ios::showpoint);
+    cout.precision(2);
     cout<<"\n";
     cout<<"Your length in meters: "<<mtrs<<" meters"<<endl;
     cout<<"Your length in centimeters: "<<cmtrs<<" centimeters"<<endl;
