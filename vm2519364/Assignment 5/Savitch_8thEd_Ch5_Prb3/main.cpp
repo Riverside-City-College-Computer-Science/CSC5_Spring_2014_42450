@@ -13,10 +13,10 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void input(int& hour, int& mins);
-void wait(int& hour, int& mins);
-void twelve(int& hrs, int& mins, char& ampm);
-void output(int& hour, int& mins, char& ampm);
+void input3(int& hour, int& mins);
+void wait3(int& hour, int& mins);
+void twelve3(int& hrs, int& mins, char& ampm);
+void output3(int& hour, int& mins, char& ampm);
 
 //Execution Begins Here
 int main(int argc, char** argv) {
@@ -25,10 +25,10 @@ int main(int argc, char** argv) {
     char ans, ampm;
     do{
     //Function Call    
-    input(hour, mins);
-    wait(hour, mins);
-    twelve(hour, mins, ampm);
-    output(hour, mins, ampm);
+    input3(hour, mins);
+    wait3(hour, mins);
+    twelve3(hour, mins, ampm);
+    output3(hour, mins, ampm);
     cout<<"\n";
     cout<<"Would you like to recalculate your wait time?\n";
     cout<<"Enter y for yes, n for no: ";
@@ -39,7 +39,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void input(int& hour, int& mins){
+void input3(int& hour, int& mins){
     cout<<"Enter the hour of the day. In 24-hour format."<<endl;
     cout<<"Hour: ";
     cin>>hour;
@@ -49,7 +49,7 @@ void input(int& hour, int& mins){
     cin>>mins;
     cout<<endl;
 }
-void wait(int& hour, int& mins){
+void wait3(int& hour, int& mins){
     if (mins>59){
         hour=hour+(mins/60);
         mins=(mins%60);
@@ -60,7 +60,7 @@ void wait(int& hour, int& mins){
     } 
 }
 
-void twelve(int& hour, int& mins, char& ampm){
+void twelve3(int& hour, int& mins, char& ampm){
     
     if (hour>12&&hour<=23){
         hour=hour-12;
@@ -78,7 +78,7 @@ void twelve(int& hour, int& mins, char& ampm){
     }
 }
 
-void output(int& hour, int& mins, char& ampm){
+void output3(int& hour, int& mins, char& ampm){
     cout<<"The time will be ";
     cout<<setw(2)<<setfill('0')<<hour<<":"<<setw(2)<<setfill('0')<<mins;
     cout<<" "<<ampm<<"M after your wait.\n";

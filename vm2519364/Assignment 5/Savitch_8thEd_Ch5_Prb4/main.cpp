@@ -13,9 +13,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void inpt(float& score1, float& score2, float& score3, float& score4);
-void calc(float&score1, float& score2, float& score3, float& score4, float& avg, float& stdDv);
-void outpt(float& avg, float& stdDv);
+void inpt4(float& score1, float& score2, float& score3, float& score4);
+void calc4(float&score1, float& score2, float& score3, float& score4, float& avg, float& stdDv);
+void outpt4(float& avg, float& stdDv);
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Declare Variables
@@ -23,9 +23,9 @@ int main(int argc, char** argv) {
     char ans;
     do{
     //Function Call
-    inpt(score1, score2, score3, score4);
-    calc(score1, score2, score3, score4, avg, stdDv);
-    outpt(avg, stdDv);
+    inpt4(score1, score2, score3, score4);
+    calc4(score1, score2, score3, score4, avg, stdDv);
+    outpt4(avg, stdDv);
     cout<<"\n";
     cout<<"Would you like to calculate the average and standard deviation of another four scores?\n";
     cout<<"Enter y for yes, n for no: ";
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void inpt(float& score1, float& score2, float& score3, float& score4){
+void inpt4(float& score1, float& score2, float& score3, float& score4){
     cout<<"\n";
     cout<<"Calculate the average and standard deviation of four of your scores.\n";
     cout<<"Enter each score individually.\n";
@@ -50,7 +50,7 @@ void inpt(float& score1, float& score2, float& score3, float& score4){
     cin>>score4;
     cout<<"\n";    
 }
-void calc(float& score1, float& score2, float& score3, float& score4, float& avg, float& stdDv){
+void calc4(float& score1, float& score2, float& score3, float& score4, float& avg, float& stdDv){
     float temp1, temp2, temp3, temp4, totTemp;
     cout.setf(ios::fixed);
     cout.precision(0);
@@ -62,7 +62,7 @@ void calc(float& score1, float& score2, float& score3, float& score4, float& avg
     totTemp=temp1*temp2*temp3*temp4;
     stdDv=sqrt(totTemp);
 }
-void outpt(float& avg, float& stdDv){
+void outpt4(float& avg, float& stdDv){
     cout<<"\n";
     cout<<"Your average score is ";
     cout<<avg;

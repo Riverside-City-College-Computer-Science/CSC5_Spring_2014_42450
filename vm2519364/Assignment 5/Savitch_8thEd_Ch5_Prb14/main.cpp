@@ -13,9 +13,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void inpt(float& wspd, float& temp);
-void calc(float& wspd, float& temp, float& windch);
-void outpt(float& windch);
+void inpt14(float& wspd, float& temp);
+void calc14(float& wspd, float& temp, float& windch);
+void outpt14(float& windch);
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Declare Variables
@@ -23,9 +23,9 @@ int main(int argc, char** argv) {
     char ans;
     do{
     //Function Call
-    inpt(wspd, temp);
-    calc(wspd, temp, windch);
-    outpt(windch);
+    inpt14(wspd, temp);
+    calc14(wspd, temp, windch);
+    outpt14(windch);
     cout<<"\n";
     cout<<"Would you like to recalculate your Wind Chill?\n";
     cout<<"Enter y for yes, n for no: ";
@@ -35,7 +35,7 @@ int main(int argc, char** argv) {
     return 0;
 }
 
-void inpt(float& wspd, float& temp){
+void inpt14(float& wspd, float& temp){
     do{
     cout<<"\n";
     cout<<"Calculate Windchill in your area in temperatures below 50 degrees Fahrenheit.\n";
@@ -48,11 +48,11 @@ void inpt(float& wspd, float& temp){
     cout<<"\n";
     }while (temp>=51);
 }
-void calc(float& wspd, float& temp, float& windch){
+void calc14(float& wspd, float& temp, float& windch){
     //Utilized Wind Chill Formula from the National Weather Service Website
     windch=35.74+(0.6215*temp)-(35.75*pow(wspd,0.16))+(0.4275*temp*pow(wspd,0.16));
 }
-void outpt(float& windch){
+void outpt14(float& windch){
     cout.setf(ios::fixed);
     cout.precision(0);
     cout<<"\n";

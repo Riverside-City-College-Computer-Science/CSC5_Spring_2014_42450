@@ -12,9 +12,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void input(float& feet, float& inch);
-void cnvrt(float& feet, float& inch, float& mtrs, float& cmtrs);
-void outpt(float& feet, float& inch, float& mtrs, float& cmtrs);
+void input6(float& feet, float& inch);
+void cnvrt6(float& feet, float& inch, float& mtrs, float& cmtrs);
+void outpt6(float& feet, float& inch, float& mtrs, float& cmtrs);
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -23,9 +23,9 @@ int main(int argc, char** argv) {
     char ans;
     do{
     //Function Call
-    input(feet, inch);
-    cnvrt(feet, inch, mtrs, cmtrs);
-    outpt(feet, inch, mtrs, cmtrs);
+    input6(feet, inch);
+    cnvrt6(feet, inch, mtrs, cmtrs);
+    outpt6(feet, inch, mtrs, cmtrs);
     cout<<"Would you like to convert another length?\n";
     cout<<"Enter y for yes, n for no: ";
     cin>>ans;
@@ -33,7 +33,7 @@ int main(int argc, char** argv) {
     //Exit Stage Right
     return 0;
 }
-void input(float& feet, float& inch){
+void input6(float& feet, float& inch){
     cout<<"\n";
     cout<<"Convert your length from feet and inches to meters and centimeters.\n";
     cout<<"Enter your length in two parts, feet then inches.\n\n";
@@ -45,12 +45,12 @@ void input(float& feet, float& inch){
     cout<<"You entered "<<feet<<"\'"<<inch<<"\"";
     cout<<"\n";
 }
-void cnvrt(float& feet, float& inch, float& mtrs, float& cmtrs){
+void cnvrt6(float& feet, float& inch, float& mtrs, float& cmtrs){
         feet=feet+(inch/12);
         mtrs=feet*0.3048;
         cmtrs=mtrs*100;     
 }
-void outpt(float& feet, float& inch, float& mtrs, float& cmtrs){
+void outpt6(float& feet, float& inch, float& mtrs, float& cmtrs){
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);
