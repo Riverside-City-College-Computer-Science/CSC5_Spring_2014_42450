@@ -452,14 +452,13 @@ char Input(float &val1, float &val2, char &ctype){
     if(utype == 'L' || utype == 'l') (ctype == '1') ? cout << "m and cm " : cout << "ft and inches ";
     else (ctype == '1') ? cout << "kg and g " : cout << "lbs and oz ";
     cout << "separated by a space: ";
-    cin >> val1 >> val2; //takes units to be converted
-    while(val1 < 0 || val2 < 0){ //Input validation
-        cout << "Invalid input! Positive values only! Try again.\n";
+    do{ //Input validation
+		if(val1 < 0 || val2 < 0) cout << "Invalid input! Positive values only! Try again.\n";
         cout << "Now enter the values to be converted in ";
         (ctype == '1') ? cout << "m and cm " : cout << "ft and inches ";
         cout << "separated by a space: ";
-        cin >> val1 >> val2;
-    }
+        cin >> val1 >> val2;		//takes values to be converted
+    }while(val1 < 0 || val2 < 0);
     return utype;
 }
 void Convert(float &val1, float &val2, char &ctype, char utype){
