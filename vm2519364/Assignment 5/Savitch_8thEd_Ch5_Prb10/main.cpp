@@ -12,9 +12,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void inpt(float& mass1, float& mass2, int& pick);
-void calc(float& mass1, float& mass2, float& mass2o, float& mass1o);
-void outpt(float& mass1, float& mass2, float& mass2o, float& mass1o);
+void inpt10(float& mass1, float& mass2, int& pick);
+void calc10(float& mass1, float& mass2, float& mass2o, float& mass1o);
+void outpt10(float& mass1, float& mass2, float& mass2o, float& mass1o);
 
 //Execution Starts here
 int main(int argc, char** argv) {
@@ -22,14 +22,14 @@ int main(int argc, char** argv) {
     float mass1, mass2, mass2o, mass1o;
     int pick;
    //Function Call
-   inpt(mass1, mass2, pick);
-   calc(mass1, mass2, mass2o, mass1o);  
-   outpt(mass1, mass2, mass2o, mass1o);  
+   inpt10(mass1, mass2, pick);
+   calc10(mass1, mass2, mass2o, mass1o);  
+   outpt10(mass1, mass2, mass2o, mass1o);  
     //Exit Stage Right
     return 0;
 }
 
-void inpt(float& mass1, float& mass2, int& pick){
+void inpt10(float& mass1, float& mass2, int& pick){
     cout<<"\n";
     cout<<"Convert your mass from kilograms or grams to pounds and ounces.\n";
     cout<<"Enter 1 for kilograms, 2 for grams: ";
@@ -44,7 +44,7 @@ void inpt(float& mass1, float& mass2, int& pick){
         cin>>mass2;
     }
 }
-void calc(float& mass1, float& mass2, float& mass2o, float& mass1o){
+void calc10(float& mass1, float& mass2, float& mass2o, float& mass1o){
     float cnvrtlb=2.2046;
     float cnvrtkg=1000;
     mass1=mass1*cnvrtlb;
@@ -52,7 +52,7 @@ void calc(float& mass1, float& mass2, float& mass2o, float& mass1o){
     mass2=(mass2/cnvrtkg)*cnvrtlb;
     mass2o=mass2*16;
 }
-void outpt(float& mass1, float& mass2, float& mass2o, float& mass1o){
+void outpt10(float& mass1, float& mass2, float& mass2o, float& mass1o){
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);

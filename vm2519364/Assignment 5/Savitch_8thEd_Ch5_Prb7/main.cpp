@@ -12,22 +12,22 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void inpt(float& lngth1, float& lngth2, int& pick);
-void calc(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i);
-void outpt(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i);
+void inpt7(float& lngth1, float& lngth2, int& pick);
+void calc7(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i);
+void outpt7(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i);
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Declare Variables
     float lngth1, lngth2, lngth1i, lngth2i;
     int pick;
     //Function Call
-    inpt(lngth1, lngth2, pick);
-    calc(lngth1, lngth2, lngth2i, lngth1i);
-    outpt(lngth1, lngth2, lngth2i, lngth1i);
+    inpt7(lngth1, lngth2, pick);
+    calc7(lngth1, lngth2, lngth2i, lngth1i);
+    outpt7(lngth1, lngth2, lngth2i, lngth1i);
     //Exit Stage Right
     return 0;
 }
-void inpt(float& lngth1, float& lngth2, int& pick){
+void inpt7(float& lngth1, float& lngth2, int& pick){
     cout<<"\n";
     cout<<"Convert your length from meters or centimeters to feet and inches.\n";
     cout<<"Enter 1 for meters, 2 for centimeters: ";
@@ -42,7 +42,7 @@ void inpt(float& lngth1, float& lngth2, int& pick){
         cin>>lngth2;
     }
 }
-void calc(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i){
+void calc7(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i){
     float cnvrtft=0.3048;
     float cnvrtmt=100;
     lngth1=lngth1/cnvrtft;
@@ -50,7 +50,7 @@ void calc(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i){
     lngth1i=lngth1*12;
     lngth2i=lngth2*12;
 }
-void outpt(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i){
+void outpt7(float& lngth1, float& lngth2, float& lngth2i, float& lngth1i){
     cout.setf(ios::fixed);
     cout.setf(ios::showpoint);
     cout.precision(2);

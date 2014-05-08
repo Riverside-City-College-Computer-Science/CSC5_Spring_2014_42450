@@ -13,9 +13,9 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void input(int& hour, int& mins);//Input 24-hour format time
-void convrt(int& hour, int& mins, char& ampm);//Convert time to 12-hour format time
-void out(int& hour, int& mins, char& ampm);//Output 12-hour format time
+void input1(int& hour, int& mins);//Input 24-hour format time
+void convrt1(int& hour, int& mins, char& ampm);//Convert time to 12-hour format time
+void out1(int& hour, int& mins, char& ampm);//Output 12-hour format time
 
 //Execution Starts Here
 int main(int argc, char** argv) {
@@ -24,9 +24,9 @@ int main(int argc, char** argv) {
     char ampm, ans;
     do{
     //Function Call    
-    input(hour, mins);
-    convrt(hour, mins, ampm);
-    out(hour, mins, ampm);
+    input1(hour, mins);
+    convrt1(hour, mins, ampm);
+    out1(hour, mins, ampm);
     cout<<"\n";
     cout<<"Would you like to convert your 24-hour notation time again?\n";
     cout<<"Enter y for yes, n for no: ";
@@ -36,7 +36,7 @@ int main(int argc, char** argv) {
     //Exit Stage Right
     return 0;
 }
-void input(int& hour, int& mins){
+void input1(int& hour, int& mins){
     cout<<"Enter your 24 hour format time. Hours then minutes."<<endl;
     cout<<"HH: ";
     cin>>hour;
@@ -46,7 +46,7 @@ void input(int& hour, int& mins){
     cout<<"You have entered the 24-hour format time of: ";
     cout<<setw(2)<<setfill('0')<<hour<<":"<<setw(2)<<setfill('0')<<mins<<endl;
 }
-void convrt(int& hour, int& mins, char& ampm){  
+void convrt1(int& hour, int& mins, char& ampm){  
     
     if (hour>12&&hour<=23){
         hour=hour-12;
@@ -64,7 +64,7 @@ void convrt(int& hour, int& mins, char& ampm){
     }
     
 }     
-void out(int& hour, int& mins, char& ampm){
+void out1(int& hour, int& mins, char& ampm){
     cout<<endl;
     if(hour<=12&&mins<=59){
     cout<<"The 12-hour format is ";
