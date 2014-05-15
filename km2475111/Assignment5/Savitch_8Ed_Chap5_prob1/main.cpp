@@ -14,8 +14,8 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void getInput(int&,int&,char);
-void cnvTime(int&,int&,char,string &);
+void getInput(int &,int &,char &);
+void cnvTime(int &,char,string &);
 void print(int,int,string);
 //Execution Begins Here!!
 int main(int argc, char** argv) {
@@ -29,7 +29,7 @@ int main(int argc, char** argv) {
         //get time from user
         getInput(hours,minutes,ampm);
         //convert time
-        cnvTime(hours,minutes,ampm,aMpM);
+        cnvTime(hours,ampm,aMpM);
         //print time
         print(hours,minutes,aMpM);
         //ask user to repeat
@@ -49,12 +49,12 @@ int main(int argc, char** argv) {
     //Exit Stage Right!!
     return 0;
 }
-void getInput(int &hrs,int &min, char AP){
+void getInput(int &hrs,int &min, char &AP){
     cout<<"Please enter the time in 24-hr format "
         <<"and specify AM with A and PM with P."<<endl
         <<"(i.e. 13:45 AM = 13 45 A): ";
     cin>>hrs>>min>>AP;
-    while(hrs<0){
+    while(hrs<0||hrs>24){
         cout<<"Enter a proper 24-hr value: ";
         cin>>hrs;
     }
@@ -67,7 +67,7 @@ void getInput(int &hrs,int &min, char AP){
         cin>>AP;
     }
 }
-void cnvTime(int &hrs,int &min,char ampm,string &AP){
+void cnvTime(int &hrs,char ampm,string &AP){
     if(hrs>12){hrs-=12;}
     if(ampm=='A'){
         AP="AM";
