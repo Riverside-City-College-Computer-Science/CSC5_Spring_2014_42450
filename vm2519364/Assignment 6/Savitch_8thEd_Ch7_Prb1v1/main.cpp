@@ -12,36 +12,22 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-void inpt(int [], int);
-void calc(int&);
+void input(float [], float [], int);
+
 
 
 //Execution Starts Here
 int main(int argc, char** argv) {
     //Declare Variables
-    const int MONTHS=12;
-    int rain[MONTHS];
-    //Function Call
-    inpt(rain, MONTHS);
+    
     
     //Exit Stage Right
     return 0;
 }
 
-void inpt(int a[], int lastMo){
-    for (int month=1; month<=lastMo; month++){
-        cout<<"Enter the average and actual rainfall for month "<<month<<endl;
-        calc(a[month-1]);
+void input(float a[], float b[], int lstMo){
+    for (int month=1;month<=lstMo;month++){
+        cout<<"Enter the average rainfall for "<<month<<endl;
+        for (float )
     }
-}
-
-void calc(int& diff){
-    diff=0;
-    float avg, act;
-    cout<<"Average Rainfall: ";
-    cin>>avg;
-    cout<<"Actual Rainfall: ";
-    cin>>act;
-    diff=act-avg;
-    
 }
