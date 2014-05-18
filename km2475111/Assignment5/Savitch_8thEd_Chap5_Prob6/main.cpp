@@ -24,7 +24,6 @@ int main(int argc, char** argv) {
     int choice;
     float input1,input2,conv1,conv2;
     do{
-        
         //Gather user input
         getInput(input1,input2);
         //convert
