@@ -9,6 +9,7 @@
 #include <iomanip>
 using namespace std;
 //Global Constants
+char exit;
 //Function Prototypes
 //Execution
 int main(int argc, char** argv) {
@@ -51,6 +52,7 @@ int main(int argc, char** argv) {
             cout<<endl;
             //START CODE//////////////////////////////
             
+            
             //FINISH CODE/////////////////////////////
             cout<<endl;
             cout<<endl;
@@ -61,9 +63,14 @@ int main(int argc, char** argv) {
 ////////////////////////////////PROBLEM 2 Savitch Chp3Prb2//////////////////////
             cout<<"Welcome to Option 2.";
             cout<<endl;
+            do {
             //START CODE//////////////////////////////
             
-            //FINISH CODE/////////////////////////////
+                
+            //FINISH CODE/////////////////////////////  
+            cout<<"Would you like to run again? Y for Yes, N for No"<<endl;
+            cin>>exit;
+            } while ((exit!='n')&&(exit!='N'));
             cout<<endl;
             cout<<endl;
             cout<<"End problem"<<endl;break;
