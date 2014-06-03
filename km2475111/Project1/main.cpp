@@ -8,9 +8,9 @@
 
 #include <iostream>
 #include <cstdlib>
-#include <cmath>
+#include <windows.h>//Sleep(milliseconds)
 #include <string>
-#include <ctime>
+#include <ctime>//random num generator
 #include <iomanip>
 #include <cstring>
 using namespace std;
@@ -74,17 +74,23 @@ int main(int argc, char** argv) {
             <<"    o.  .,#/^^O;WX//^',,,  "<<endl
             <<" o.x#//##//o^^^#cVw#W;,,,o."<<endl
             <<"///////////////////////////////"<<endl;
+        Sleep(3000);
+        cout<<endl;
         //explain game
-        cout<<"This game is an RPG wave survival game!"<<endl
-            <<"How the game works:"<<endl
-            <<"One turn = A Player action then an Enemy action."<<endl
-            <<"The player can attack or heal on their turn."<<endl<<endl
-            <<"Goal:"<<endl
+        cout<<"This game is an RPG wave survival game!"<<endl;
+        Sleep(2000);
+        cout<<"How the game works:"<<endl;
+        Sleep(2000);
+        cout<<"One turn = A Player action then an Enemy action."<<endl
+            <<"The player can attack or heal on their turn."<<endl<<endl;
+        Sleep(4000);
+        cout<<"Goal:"<<endl
             <<"Try and survive 50 waves of enemies!"<<endl
-            <<"But beware, every 10 waves a boss will appear!"<<endl
-            <<"Oh...and you can't flee from battle."<<endl
-            <<"==============================="<<endl
-            <<"Good luck and let us begin!!!"<<endl<<endl;
+            <<"But beware, every 10 waves a boss will appear!"<<endl;
+        Sleep(4000);
+        cout<<"Oh...and you can't flee from battle."<<endl;
+        Sleep(2000);
+        cout<<endl<<"Good luck!!!"<<endl<<endl;
         //ask user for name and class choice
         cout<<"What is your name? ";
         cin>>plyrNme;
@@ -224,29 +230,21 @@ int main(int argc, char** argv) {
                 }
                 default:{
                     cout<<"Should never get here!"<<endl;
-                    
                 }
             }
             //enemy turn
             //determine action of enemy based on hp levels
             //otherwise attack
             //if zero or less hp = dead
-            if(eHp<=0){
-                eTurn=3;
-            }
+            if(eHp<=0){eTurn=3;}
             //if hp less than 1/2 but greater than 0 = heal
-            else if((eHp<(eHp/2))&&eHp>0){
-                eTurn=4;//move to case 4
-            }
+            //move to case 4
+            else if((eHp<(eHp/2))&&eHp>0){eTurn=4;}
             //defend on 20% chance
             //rand from 5-10, if rand = 5 -> defend
-            else if((rand()%5+6)==5){
-                eTurn=2;
-            }
+            else if((rand()%5+6)==5){eTurn=2;}
             //otherwise attack
-            else{
-                eTurn=1;
-            }
+            else{eTurn=1;}
             //defend - replaces prev case 2
             //menu for enemy actions
             switch(eTurn){
@@ -436,8 +434,10 @@ void doBattle(int pCh,int pATK,int pMATK,
                 dmgLow=(pATK+eDEF)/3;
             }
         }else{/*should never get here!*/}
-        int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;//difference*3
-        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}//make sure to turn negatives/zero to 1
+        //difference*3
+        int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;
+        //make sure to turn negatives/zero to 1
+        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}
         //implement critical
         int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
@@ -469,8 +469,10 @@ void doBattle(int pCh,int pATK,int pMATK,
                 dmgLow=(pMATK+eSPR)/3;
             }
         }else{/*should never get here!*/}
-        int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;//difference*3
-        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}//make sure to turn negatives/zero to 1
+        //difference*3
+        int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;
+        //make sure to turn negatives/zero to 1
+        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}
         //implement critical
         int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
@@ -569,7 +571,8 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
             }
         }
         int totDmg=rand()%(dmgMax-dmgLow)+dmgLow+1;
-        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}//make sure to turn negatives/zero to 1
+        //make sure to turn negatives/zero to 1
+        if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}
         //implement critical
         int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
@@ -642,7 +645,7 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
 }
 void emyDfnd(bool &eDefend){
     eDefend=true;
-    cout<<"The enemy readies their shield..."<<endl;
+    cout<<"The enemy watches carefully..."<<endl;
 }
 void emyHeal(int &eHP,int eSPR, int WAVE){//amount enemy recovers
     //recover a random amount with small deviation
