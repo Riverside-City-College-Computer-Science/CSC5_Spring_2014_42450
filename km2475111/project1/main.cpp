@@ -6,12 +6,12 @@
  * Purpose: Fantasy Wave Survival
  */
 
-#include <iostream>
+#include <iostream>//input-output
 #include <cstdlib>
 #include <windows.h>//Sleep(milliseconds)
-#include <string>
+#include <string>//for string variables
 #include <ctime>//random num generator
-#include <iomanip>
+#include <iomanip>//used for battle dispay
 #include <cstring>
 using namespace std;
 
@@ -57,9 +57,10 @@ int main(int argc, char** argv) {
     int cnvChce,wave=0,cnvCmnd,cntinue,
         pHp=0,pAtk=0,pDef=0,pMatk=0,pSpr=0,//player stats
         eTurn,eHp=0,eAtk=0,eDef=0,eMatk=0,eSpr=0,eDex=0;//enemy stats
+    //Begin Game Code
     //loop until game exit
     while(!gamExit){
-        /////////Start adventure!/////////
+        ////////////Start adventure!/////////////
         cout<<" + FANTASY WAVE SURVIVAL   "<<endl
             <<"            <@@>        *  "<<endl
             <<"             ||    +       "<<endl
@@ -83,13 +84,13 @@ int main(int argc, char** argv) {
         Sleep(2000);
         cout<<"One turn = A Player action then an Enemy action."<<endl
             <<"The player can attack or heal on their turn."<<endl<<endl;
-        Sleep(4000);
+        Sleep(3000);
         cout<<"Goal:"<<endl
             <<"Try and survive 50 waves of enemies!"<<endl
             <<"But beware, every 10 waves a boss will appear!"<<endl;
-        Sleep(4000);
+        Sleep(3000);
         cout<<"Oh...and you can't flee from battle."<<endl;
-        Sleep(2000);
+        Sleep(1000);
         cout<<endl<<"Good luck!!!"<<endl<<endl;
         //ask user for name and class choice
         cout<<"What is your name? ";
