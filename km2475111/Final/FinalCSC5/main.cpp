@@ -18,13 +18,14 @@
 using namespace std;
 
 //Global Constants
-const int COLS=15;//for 10x15 array
-const int COLS_2=6;
+const int COLS=15;//problem 5
+const int COLS_2=6;//problem 6
 //Function Prototypes
 //Problem 1
 unsigned short reverse(unsigned short);
-//Problem 4
-
+//Problem 3
+void fillVec(vector<int> &,vector<int> &,int);
+void prntVec(vector<int> &,vector<int> &,int);
 //Problem 5
 void filAray(char [][COLS],int,int,fstream &);
 void prntAry(char [][COLS],int,int);
@@ -93,14 +94,16 @@ int main(int argc, char** argv) {
                 //Ask for number
                 cout<<"Enter a number: ";
                 cin>>num;
-                //check if number is bigger than short
-                if(num>MAXVALU){
+                //check if number or number rev is bigger than unsigned short
+                revNum=reverse(num);
+                if(num>MAXVALU||revNum>MAXVALU){
                     cout<<"No Conversion Possible."<<endl;
                 }else{
                     //reverse number
-                    revNum=reverse(num);
+                    //revNum=reverse(num);
                     cout<<num<<" reversed is "<<revNum<<endl;
                 }
+                cout<<endl;
                 break;
             }
             case 2:{//problem 2
@@ -130,6 +133,7 @@ int main(int argc, char** argv) {
                     cout<<"Congratulations!!"<<endl
                         <<"You got the number in "<<tries<<" tries!"<<endl;
                 }
+                cout<<endl;
                 break;
             }
             case 3:{//problem 3
@@ -140,20 +144,9 @@ int main(int argc, char** argv) {
                 vector<int> odd;
                 vector<int> even;
                 //fill vectors
-                for(int i=0;i<size;i++){
-                    odd.push_back(1+(2*(rand()%size+1)));
-                    even.push_back(2*(rand()%size+1));
-                }
+                fillVec(odd,even,size);
                 //output
-                cout<<"Odd Vector : ";
-                for(int i=0;i<size;i++){
-                    cout<<odd[i]<<" ";
-                }
-                cout<<endl;
-                cout<<"Even Vector: ";
-                for(int i=0;i<size;i++){
-                    cout<<even[i]<<" ";
-                }
+                prntVec(odd,even,size);
                 cout<<endl;
                 break;
             }
@@ -176,6 +169,7 @@ int main(int argc, char** argv) {
                 cout<<"78 was thrown "<<freq[2]<<" times."<<endl;
                 cout<<"181 was thrown "<<freq[3]<<" times."<<endl;
                 cout<<"208 was thrown "<<freq[4]<<" times."<<endl;
+                cout<<endl;
                 break;
             }
             case 5:{//problem 5
@@ -193,6 +187,7 @@ int main(int argc, char** argv) {
                 cout<<"After Sort:"<<endl;
                 prntAry(sortAry,SIZE);
                 //exit stage right!!
+                cout<<endl;
                 file.close();
                 break;
             }
@@ -250,6 +245,7 @@ int main(int argc, char** argv) {
                         output<<nArray[row][col];
                     }
                 }
+                cout<<endl;
                 //close the files
                 input.close();
                 output.close();
@@ -261,6 +257,7 @@ int main(int argc, char** argv) {
             }
         }
     }while(loop);
+    
     //Exit Stage Right!!
     return 0;
 }
@@ -277,6 +274,25 @@ unsigned short reverse(unsigned short num){
     }else{
         return 0;
     }
+}
+//Problem 3
+void fillVec(vector<int> &odd,vector<int> &even,int size){
+    for(int i=0;i<size;i++){
+        odd.push_back(1+(2*(rand()%size+1)));
+        even.push_back(2*(rand()%size+1));
+    }
+}
+void prntVec(vector<int> &odd,vector<int> &even,int size){
+    cout<<"Odd Vector : ";
+    for(int i=0;i<size;i++){
+        cout<<odd[i]<<" ";
+    }
+    cout<<endl;
+    cout<<"Even Vector: ";
+    for(int i=0;i<size;i++){
+        cout<<even[i]<<" ";
+    }
+    cout<<endl;
 }
 //Problem 5
 void filAray(char a[][COLS],int r,int c,fstream &file){

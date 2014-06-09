@@ -3,11 +3,12 @@
  * Author: Kevin R. Mindreau
  *
  * Created on April 9, 2014, 7:58 AM
- * Purpose: Fantasy Wave Survival
+ * Purpose: Project v2 - Fantasy Wave Survival
  */
 
+//System Libraries
 #include <iostream>//input-output
-#include <cstdlib>
+#include <cstdlib>//c standard library
 #include <windows.h>//Sleep(milliseconds)
 #include <string>//for string variables
 #include <ctime>//random num generator
@@ -15,7 +16,7 @@
 #include <cstring>
 using namespace std;
 
-//Global constants
+//No Global constants
 
 //Function Prototypes
 //generate stats for new knight
@@ -53,7 +54,7 @@ int main(int argc, char** argv) {
     bool gamExit=false;
     string plyrNme,clssTyp,monster;//general info
     //project 2 -  add critical chance and guard
-    bool pGrd=false,eGrd=false;
+    bool pGrd=false;
     int cnvChce,wave=0,cnvCmnd,cntinue,
         pHp=0,pAtk=0,pDef=0,pMatk=0,pSpr=0,//player stats
         eTurn,eHp=0,eAtk=0,eDef=0,eMatk=0,eSpr=0,eDex=0;//enemy stats
@@ -75,23 +76,20 @@ int main(int argc, char** argv) {
             <<"    o.  .,#/^^O;WX//^',,,  "<<endl
             <<" o.x#//##//o^^^#cVw#W;,,,o."<<endl
             <<"///////////////////////////////"<<endl;
-        Sleep(3000);
         cout<<endl;
+        Sleep(2000);
         //explain game
         cout<<"This game is an RPG wave survival game!"<<endl;
-        Sleep(2000);
         cout<<"How the game works:"<<endl;
-        Sleep(2000);
         cout<<"One turn = A Player action then an Enemy action."<<endl
             <<"The player can attack or heal on their turn."<<endl<<endl;
-        Sleep(3000);
+        Sleep(2000);
         cout<<"Goal:"<<endl
             <<"Try and survive 50 waves of enemies!"<<endl
             <<"But beware, every 10 waves a boss will appear!"<<endl;
-        Sleep(3000);
         cout<<"Oh...and you can't flee from battle."<<endl;
-        Sleep(1000);
         cout<<endl<<"Good luck!!!"<<endl<<endl;
+        Sleep(2000);
         //ask user for name and class choice
         cout<<"What is your name? ";
         cin>>plyrNme;
@@ -239,14 +237,9 @@ int main(int argc, char** argv) {
             //if zero or less hp = dead
             if(eHp<=0){eTurn=3;}
             //if hp less than 1/2 but greater than 0 = heal
-            //move to case 4
-            else if((eHp<(eHp/2))&&eHp>0){eTurn=4;}
-            //defend on 20% chance
-            //rand from 5-10, if rand = 5 -> defend
-            else if((rand()%5+6)==5){eTurn=2;}
+            else if((eHp<(eHp/2))&&eHp>0){eTurn=2;}
             //otherwise attack
             else{eTurn=1;}
-            //defend - replaces prev case 2
             //menu for enemy actions
             switch(eTurn){
                 case 1:{
@@ -256,8 +249,8 @@ int main(int argc, char** argv) {
                     break;
                 }
                 case 2:{
-                    //implement guard action
-                    emyDfnd(eGrd);
+                    //healing action
+                    emyHeal(eHp,eSpr,wave);
                     cout<<"==============================="<<endl;
                     break;
                 }
@@ -267,12 +260,6 @@ int main(int argc, char** argv) {
                        <<"Watch out! Another monster approaches!!"<<endl;
                    cout<<"==============================="<<endl;
                    break;
-                }
-                case 4:{
-                    //healing action
-                    emyHeal(eHp,eSpr,wave);
-                    cout<<"==============================="<<endl;
-                    break;
                 }
                 default:{
                     cout<<"Should never get here!"<<endl;
@@ -428,13 +415,9 @@ void doBattle(int pCh,int pATK,int pMATK,
         int dmgMax=(pATK-eDEF)*3,
             dmgLow=(pATK-(eDEF/2))*2;
         if(dmgMax<=0||dmgLow<=0){
-            if(dmgMax<=0){
-                dmgMax=(pATK+eDEF)/2;
-                //dmgLow=(pATK+eDEF)/3;
-            }else{
-                dmgLow=(pATK+eDEF)/3;
-            }
-        }else{/*should never get here!*/}
+            dmgMax=1;
+            dmgLow=1;
+        }
         //difference*3
         int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;
         //make sure to turn negatives/zero to 1
@@ -442,25 +425,14 @@ void doBattle(int pCh,int pATK,int pMATK,
         //implement critical
         int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
-            totDmg*=2;
-            if(eGrd){
-                totDmg/=3;
-                cout<<"Enemy defends itself!"<<endl;
-                eGrd=false;
-            }
             eHP-=totDmg;//subtract damage from enemy
             cout<<"Critical hit!!"<<endl
                 <<"You did "<<totDmg<<" physical damage!"<<endl;
         }else{
-            if(eGrd){
-                totDmg/=3;
-                cout<<"Enemy defends itself!"<<endl;
-                eGrd=false;
-            }
             eHP-=totDmg;//subtract damage from enemy
             cout<<"You did "<<totDmg<<" physical damage!"<<endl;
         }
-    }else if(cnvResp==2){
+    }else{
         //calculate magic damage
         int dmgMax=(pMATK-eSPR)*3,dmgLow=(pMATK-(eSPR/2))*2;
         if(dmgMax<=0||dmgLow<=0){
@@ -478,24 +450,14 @@ void doBattle(int pCh,int pATK,int pMATK,
         int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
             totDmg*=2;
-            if(eGrd){
-                totDmg/=3;
-                cout<<"Enemy defends itself!"<<endl;
-                eGrd=false;
-            }
             eHP-=totDmg;//subtract damage from enemy
             cout<<"Critical hit!!"<<endl
                 <<"You did "<<totDmg<<" magic damage!"<<endl;
         }else{
-            if(eGrd){
-                totDmg/=3;
-                cout<<"Enemy defends itself!"<<endl;
-                eGrd=false;
-            }
             eHP-=totDmg;//subtract damage from enemy
             cout<<"You did "<<totDmg<<" magic damage!"<<endl;
         }
-    }else{/*should never get here!*/}
+    }
 }
 void recvr(string clssTyp,int &pHP,int pSPR){//calculates unit healing
     //recover a random amount with small deviation
@@ -565,17 +527,14 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
         //calculate physical damage
         int dmgMax=(eATK-pDEF)*3,dmgLow=(eATK-(pDEF/2))*2;
         if(dmgMax<=0||dmgLow<=0){
-            if(dmgMax<=0){
-                dmgMax=(eATK+pDEF)/3;
-            }else{
-                dmgLow=(eATK+pDEF)/4;
-            }
+                dmgMax=1;
+                dmgLow=1;
         }
         int totDmg=rand()%(dmgMax-dmgLow)+dmgLow+1;
         //make sure to turn negatives/zero to 1
         if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}
         //implement critical
-        int crit=(rand()%4)+1;//1-4 = 25% chance for crit; 1=crit true
+        int crit=(rand()%4+1);//1-4 = 25% chance for crit; 1=crit true
         if(crit==1){
             totDmg*=2;
             //check for guard=true
@@ -603,16 +562,13 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
         }
         
     }
-    else if(tmpResp==2){
+    else{
         //calculate magic damage
         int dmgMax=(eMATK-pSPR)*3,dmgLow=(eMATK-(pSPR/2))*2;
         if(dmgMax<=0||dmgLow<=0){
-            if(dmgMax<=0){
-                dmgMax=(eMATK+pSPR)/3;
-                
-            }else{
-                dmgLow=(eMATK+pSPR)/4;
-            }
+                dmgMax=1;
+                dmgLow=1;
+        }
         int totDmg=rand()%(dmgMax-dmgLow)+dmgLow;//difference*3
         if(totDmg<=0){totDmg=(dmgMax+dmgLow)/2;}//make sure to turn negatives/zero to 1
         //implement critical
@@ -621,7 +577,7 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
             totDmg*=2;
             if(pGrd){
                 //greatly reduce damage
-                totDmg/=3;
+                totDmg/=2;
                 cout<<"You defend yourself!"<<endl;
                 //reset guard command from player
                 pGrd=false;
@@ -632,7 +588,7 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
         }else{
             if(pGrd){
                 //greatly reduce damage
-                totDmg/=3;
+                totDmg/=2;
                 cout<<"You defend yourself!"<<endl;
                 //reset guard command from player
                 pGrd=false;
@@ -641,12 +597,6 @@ void emyDmg(int &pHP,int pDEF, int pSPR,
             cout<<"Enemy did "<<totDmg<<" magic damage!"<<endl;
         }
     }
-    else{/*should never get here*/}
-    }
-}
-void emyDfnd(bool &eDefend){
-    eDefend=true;
-    cout<<"The enemy watches carefully..."<<endl;
 }
 void emyHeal(int &eHP,int eSPR, int WAVE){//amount enemy recovers
     //recover a random amount with small deviation
