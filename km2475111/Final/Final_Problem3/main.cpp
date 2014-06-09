@@ -24,8 +24,7 @@ using namespace std;
 //Global Constants
 
 //System Libraries
-void fillVec();
-void prntVec();
+
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
