@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Final_Problem6
+PROJECTNAME=Final_ExtraCredit
 
 # Active Configuration
 DEFAULTCONF=Debug

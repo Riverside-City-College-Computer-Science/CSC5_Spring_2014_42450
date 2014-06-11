@@ -19,7 +19,7 @@ using namespace std;
 
 //Global Constants
 const int COLS=15;//problem 5
-const int COLS_2=6;//problem 6
+const int COLS_2=7;//problem 6
 //Function Prototypes
 //Problem 1
 unsigned short reverse(unsigned short);
@@ -63,20 +63,17 @@ int main(int argc, char** argv) {
     vector<string> sortAry;
     //Problem 6
     //Declare Variables
+    //Declare Variables
     ifstream input;
     ofstream output;
-    //Declare file name
-    string inFile="table.dat";
-    char outFile[]="augtable.dat";
     //Variables
     bool SENTINEL=true;
-    const int SIZE_2=6;
-    int array[SIZE_2][COLS_2];//6x6 grid
-    int nArray[SIZE_2+1][COLS_2+1];//7x7 grid
+    const int SIZE_2=7;
+    int array[SIZE_2][COLS_2]={0};
     //sum for each column
-    int colSum[COLS_2]={0};
+    int colSum[COLS_2-1]={0};
     //sum for each row
-    int rowSum[SIZE_2]={0};
+    int rowSum[SIZE_2-1]={0};
     //loop until user says to quit
     do{
         //ask user for which problem they wish to go to
@@ -192,60 +189,42 @@ int main(int argc, char** argv) {
                 break;
             }
             case 6:{//problem 6
-                input.open(inFile.c_str());//opening data file
-                output.open(outFile);//outputting data file
+                input.open("table.dat",ios::in);//opening data file
                 //set up array to add col and row
-                for(int row=0;row<SIZE;row++){
-                    for(int col=0;col<SIZE;col++){
+                for(int row=0;row<SIZE-1;row++){
+                    for(int col=0;col<SIZE-1;col++){
                         input>>array[row][col];
                     }
                 }
                 //add col and row for totals
-                int cnt=0;
                 int colPos=0,rowPos=0;
-                while(SENTINEL){
-                    for(int i=0;i<SIZE;i++){
-                        //loops and adds column 1 together
-                        colSum[colPos]+=array[i][colPos];
-                        if(i>=6){
-                            //adds sum to new array
-                            nArray[6][colPos]=colSum[colPos];
-                        }
-                    }
-                    colPos++;
-                    if(colPos>=6){
-                        SENTINEL=false;
+                for(colPos;colPos<SIZE-1;colPos++){
+                    for(int i=0;i<SIZE-1;i++){
+                        colSum[colPos]+=array[SIZE-1][i];
                     }
                 }
-                SENTINEL=true;
-                while(SENTINEL){
-                    for(int i=0;i<SIZE;i++){
-                        //loops and adds column 1 together
-                        rowSum[rowPos]+=array[rowPos][i];
-                        if(i>=6){
-                            //adds sum to new array
-                            nArray[rowPos][6]=rowSum[rowPos];
-                        }
-                    }
-                    rowPos++;
-                    if(rowPos>=6){
-                        SENTINEL=false;
+                for(int k=0;k<SIZE;k++){
+                    array[SIZE-1][k]=colSum[k];
+                }
+                for(rowPos;rowPos<SIZE-1;rowPos++){
+                    for(int i=0;i<SIZE-1;i++){
+                        rowSum[rowPos]+=array[i][SIZE-1];
                     }
                 }
-                //move rest of the 6x6 contents to new 7x7
-                for(int row=0;row<SIZE;row++){
-                    for(int col=0;col<SIZE;col++){
-                        nArray[row][col]=array[row][col];
-                    }
+                for(int k=0;k<SIZE;k++){
+                    array[k][SIZE-1]=rowSum[k];
                 }
-                //output to file
+                for(int k=0;k<SIZE;k++){
+                    array[SIZE-1][SIZE-1]=colSum[k]+rowSum[k];
+                }
+                //transfer sum data
+                output.open("augtable.dat",ios::out);//outputting data file
                 for(int row=0;row<7;row++){
                     for(int col=0;col<7;col++){
-                        output<<fixed<<setw(4);
-                        output<<nArray[row][col];
+                        output<<fixed<<setw(6)<<right
+                              <<array[row][col];
                     }
                 }
-                cout<<endl;
                 //close the files
                 input.close();
                 output.close();
