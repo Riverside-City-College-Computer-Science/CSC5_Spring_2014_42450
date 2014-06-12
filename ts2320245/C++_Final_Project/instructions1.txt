@@ -1,0 +1,9 @@
+                                                   BULLS AND COWS
+                                                   --------------
+In this game, the computer and you are going to think of a random  4-digit number. Both of you will try to guess each others number.
+You will first guess the computers number.
+To win, guess the computers number in less tries than the computer.
+You go first.
+Follow the computers hints: 
+Bulls = correct digit, in a correct position.
+Cows = correct digit, in an incorrect position.

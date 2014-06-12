@@ -1,0 +1,12 @@
+This game is an RPG wave survival game!
+
+How the game works:
+One turn = A Player action then an Enemy action.
+The player can attack or heal on their turn.
+
+Goal:
+Try and survive 50 waves of enemies!
+But beware, every 10 waves a boss will appear!
+Oh...and you can't flee from battle.
+
+Good luck!!!
