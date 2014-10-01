@@ -1,45 +1,57 @@
-/* 
- * File:   main.cpp
- * Author: julio
- *
- * Created on March 16, 2014, 10:33 PM
- */
+//
+//  main.cpp
+//  final pruebas
+//
+//  Created by JuLio on 6/10/14.
+//  Copyright (c) 2014 JuLio. All rights reserved.
+//
 
-//System Libraries
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
-int main(int argc, char** argv) 
-{
-     
-    //Declare Variables
-    double interest, time, facevalue, amount;
-    char choice;
-    do
-    {
-      //Amount you want to receive
-      cout<<"Enter the amount you want to receive:";
-      cin>>amount;
-      //Time for amount needed
-      cout<<"Enter time for which amount is needed:";
-      cin>>time;
-      //Rate of interest on loan
-      cout<<"Enter the rate of interest on loan in percent:";
-      cin>>interest;
-      //Calculating interest
-      interest = interest/100;
-      //Calculating fasce value
-      facevalue = amount/ (1-time*interest);
-      //Display face value
-      cout<<"You must ask for a loan of: $."<<facevalue;
-      //Display monthly instalments
-      cout<<" Monthly instalments that you need to pay will be ";
-      cout<<(facevalue/(time*12))<<endl;
-      cout<<"If you want to repeat calculations press y";
-      cin>> choice;
-    }while (choice == 'y' || choice == 'Y');
-      
-        system("pause");
-                
-    return 0;
+
+int random(int NUM ){
+    
+    srand(time(0));
+    
+    int randomseq;
+    for (int i = 0; i <= 10000; ++i) {
+        randomseq = ((int[]) {9, 51, 78, 181, 208})[rand() % 5];
+    }
+    return randomseq;
 }
 
+
+int main(int argc, const char * argv[])
+{
+    srand(static_cast<int>(time(0)));
+    
+    const int n=5;
+    
+    const int ntimes=10000;
+    
+    int freq[n];
+    
+    srand(time(0));
+    int NUM;
+    
+    int randomseq;
+    for (int i = 0; i <= n; ++i) {
+        randomseq = ((int[]) {9, 51, 78, 181, 208})[rand() % 5];
+    }
+    
+ 
+    short int rndseq[]={9,51,78,181,208};
+    
+    int numbers;
+    for (int i = 0; i <= 4; ++i)
+    {
+        numbers = rand() % 1000 + 1;
+        cout<<rndseq[i]<<" occured "<<freq[i]<<" times"<<endl;
+        
+    }
+    
+    
+    
+}
